@@ -1,13 +1,12 @@
-package com.example.application.service;
+package com.cg.service;
 
 import java.util.List;
 
-import com.example.application.beans.Parking;
-import com.example.application.beans.Slots;
+import com.cg.beans.Parking;
 
 public interface ServiceParking {
 
-	Parking add(Parking parking);
+	
 
 	List<Parking> fetchAll();
 
@@ -16,6 +15,8 @@ public interface ServiceParking {
 	String delete(int srno);
 
 	List<Parking> findByLocation(String location);
+
+	Parking addSlot(Parking parking);
 
 
 

@@ -1,4 +1,4 @@
-package com.example.application.beans;
+package com.cg.beans;
 
 import java.sql.Date;
 import java.sql.Time;
