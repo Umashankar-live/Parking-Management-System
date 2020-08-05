@@ -32,6 +32,70 @@ public class BookSlot {
 	private int TotalPrice;
 	
 	public BookSlot() {}
+
+	public int getSrNo() {
+		return srNo;
+	}
+
+	public void setSrNo(int srNo) {
+		this.srNo = srNo;
+	}
+
+	public int getBookingId() {
+		return bookingId;
+	}
+
+	public void setBookingId(int bookingId) {
+		this.bookingId = bookingId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Time getTime() {
+		return time;
+	}
+
+	public void setTime(Time time) {
+		this.time = time;
+	}
+
+	public int getHour() {
+		return hour;
+	}
+
+	public void setHour(int hour) {
+		this.hour = hour;
+	}
+
+	public int getType() {
+		return Type;
+	}
+
+	public void setType(int type) {
+		Type = type;
+	}
+
+	public String getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(String vehicleNo) {
+		this.vehicleNo = vehicleNo;
+	}
+
+	public int getTotalPrice() {
+		return TotalPrice;
+	}
+
+	public void setTotalPrice(int totalPrice) {
+		TotalPrice = totalPrice;
+	}
 	
 	
 	
