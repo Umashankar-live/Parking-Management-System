@@ -6,18 +6,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.application.beans.Parking;
+import com.example.application.beans.Slots;
 import com.example.application.repository.ParkingDao;
+import com.example.application.repository.SlotDao;
 @Service
 public class ServiceImpl  implements ServiceParking{
 
 	@Autowired
 	private ParkingDao dao;
 	
+	@Autowired
+	private SlotDao sdao;
+	
+	@Autowired
+	private Slots slots = new Slots();
 	@Override
 	public Parking add(Parking parking) {
+		
+		
+		
+		for (int slot= 1; slot <= parking.getTwoWheelerTotal(); slot++) {
+		slots.setLocation( parking.getLocation());
+		slots.setSlots(slot);
+		slots.setStatus(true);
+		slots.setType(2);
+		sdao.save(slots);
+		}
+		
+		for (int b= 1; b <= parking.getFourWheelerAvailable(); b++) {
+			System.out.println(parking.getFourWheelerAvailable());
+			slots.setLocation( parking.getLocation());
+			slots.setSlots(b);
+			slots.setStatus(true);
+			slots.setType(4);
+			sdao.save(slots);
+			}
+		
 		return dao.save(parking);
+		
 	}
-
 	@Override
 	public List<Parking> fetchAll() {
 		return dao.findAll();

@@ -3,6 +3,7 @@ package com.example.application.service;
 import java.util.List;
 
 import com.example.application.beans.Parking;
+import com.example.application.beans.Slots;
 
 public interface ServiceParking {
 

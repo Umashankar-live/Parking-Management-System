@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.application.beans.Parking;
+import com.example.application.beans.Slots;
 import com.example.application.service.ServiceParking;
 import com.google.j2objc.annotations.AutoreleasePool;
 
