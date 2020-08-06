@@ -56,10 +56,10 @@ public class BookingController {
 		return service.findByLocation(location);
 	}
 	
-	@GetMapping("/getBookingByUserId/{userId}")
-	public List<BookSlot> getBookingByUserId(@PathVariable int userId){
+	@GetMapping("/getBookingByUserId/{username}")
+	public List<BookSlot> getBookingByUserId(@PathVariable("username") String userName){
 		System.out.println("inBookingUserId");
-		return service.getBookingByUserId(userId);
+		return service.getBookingByUsername(userName);
 	}
 	
 	

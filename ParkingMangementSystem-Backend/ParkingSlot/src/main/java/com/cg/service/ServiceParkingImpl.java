@@ -19,25 +19,13 @@ public class ServiceParkingImpl implements ServiceParking {
 
 	@Autowired
 	private SlotDao sdao;
-<<<<<<< HEAD
 
-	
-
-	@Override
-	public Parking addSlot(Parking parking) {
-
-=======
-	
 	@Autowired
 	public Slots slots;
-	
-
-
 
 	@Override
 	public Parking addSlot(Parking parking) {
-		
->>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
+
 		for (int slot = 1; slot <= parking.getTwoWheelerTotal(); slot++) {
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
@@ -48,7 +36,6 @@ public class ServiceParkingImpl implements ServiceParking {
 		}
 
 		for (int b = 1; b <= parking.getFourWheelerAvailable(); b++) {
-			// System.out.println(parking.getFourWheelerAvailable())
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
 			slots.setSlots(b);
@@ -56,7 +43,7 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setType(4);
 			sdao.save(slots);
 		}
-		
+
 		return dao.save(parking);
 
 	}
@@ -93,42 +80,36 @@ public class ServiceParkingImpl implements ServiceParking {
 	public List<Parking> findByLocation(String location) {
 		return dao.findByLocation(location);
 	}
-<<<<<<< HEAD
 
 	@Override
 	public Slots getSlotById(int slotId) {
-	
+
 		return sdao.findById(slotId).get();
 	}
 
 	@Override
 	public String updateStatus(int slotId) {
-	
-	 sdao.update(slotId);
-	  return "Status Updated for the slots";
-		
-		
+
+		sdao.update(slotId);
+		return "Status Updated for the slots";
+
 	}
 
-=======
-
-	
 	public List<Slots> findSlotsByLocation(String location) {
 		return sdao.findSlotsByLocation(location);
 	}
 
 	@Override
 	public List<Slots> findByLocationAndType(String location, int type) {
-	List<Slots> list = findSlotsByLocation(location);	
-	List<Slots> newList = new ArrayList<Slots>();
+		List<Slots> list = findSlotsByLocation(location);
+		List<Slots> newList = new ArrayList<Slots>();
 		for (Slots slots : list) {
-				if (type == slots.getType()) {
-					newList.add(slots);
-				}
-				
-		}
-	return newList;
+			if (type == slots.getType()) {
+				newList.add(slots);
+			}
 
->>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
-}
+		}
+		return newList;
+
+	}
 }

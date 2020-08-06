@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,20 +43,6 @@ public class UserController {
 	public List<User> getAllUser(){
 		return this.service.getallUser();
 	}
-	
-	//http://localhost:8034/User/Userbyid/{empId}
-	@GetMapping("/Userbyid/{empId}")
-	public User getUserById(@PathVariable(value = "empId")int empId) {
-		return this.service.checkRole(empId);
-		
-	}
-	
-	//http://localhost:8034/User/getAllParticipantList
-	@GetMapping("/getAllParticipantList")
-	public List<User> getAllParticipantList() {
-		return this.service.getAllParticipant();
-	}
-
 	
 
 }

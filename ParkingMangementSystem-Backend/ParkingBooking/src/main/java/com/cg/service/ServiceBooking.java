@@ -17,6 +17,6 @@ public interface ServiceBooking {
 
 	BookSlot getBooking(int bookingId);
 
-	List<BookSlot> getBookingByUserId(int userId);
+	List<BookSlot> getBookingByUsername(String username);
 
 }

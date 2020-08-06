@@ -39,17 +39,16 @@ public class ServiceBookingImpl implements ServiceBooking {
 
 
 	@Override
-	public BookSlot getBooking(int bookingId) {
-		return bdao.findAll().stream().filter(x->x.getBookingId()==
-									bookingId).findAny().get();
-				
+	public List<BookSlot> getBookingByUsername(String username) {
+		//return bdao.findAll().stream().filter(x->x.getUserName(). ==username).findAny().get();
+		
+		return bdao.findAll().stream().filter(x -> x.getUserName().equalsIgnoreCase(username)).collect(Collectors.toList());
 	}
 
-
 	@Override
-	public List<BookSlot> getBookingByUserId(int userId) {
-		return bdao.findAll().stream().filter(x->x.getUserId()
-				==userId).collect(Collectors.toList());
+	public BookSlot getBooking(int bookingId) {
+		
+		return bdao.findById(bookingId).get();
 	}
 
 }

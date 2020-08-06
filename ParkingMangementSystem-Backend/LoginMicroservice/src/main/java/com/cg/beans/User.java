@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
-
 @Entity
 @Table(name ="User_MASTER")
 public class User {
@@ -26,7 +24,7 @@ public class User {
 	private String role;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public User(Integer userId, String userName, String password, String role) {
