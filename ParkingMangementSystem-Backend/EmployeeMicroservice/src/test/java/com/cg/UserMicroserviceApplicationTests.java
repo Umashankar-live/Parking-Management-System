@@ -1,6 +1,7 @@
 package com.cg;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -8,7 +9,7 @@ import static org.mockito.Mockito.when;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,7 +48,7 @@ public class UserMicroserviceApplicationTests {
 	public void saveUserTest() {
 		User User = new User(1, "Shekhar", "12345", "participant");
 		when(repository.save(User)).thenReturn(User);
-		assertEquals(User, service.addUser(User));
+		assertEqual(User, service.addUser(User));
 	}
 
 	@Test

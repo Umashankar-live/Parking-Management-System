@@ -11,13 +11,33 @@ import com.cg.repository.ParkingDao;
 import com.cg.repository.SlotDao;
 
 @Service
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
+public class ServiceImpl  implements ServiceParking{
+	
+	
+=======
 public class ServiceParkingImpl implements ServiceParking {
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Autowired
 	private ParkingDao dao;
 
 	@Autowired
 	private SlotDao sdao;
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
+	
+	@Autowired
+	public Slots slots;
+	
+	
+	@Override
+	public Parking add(Parking parking) {
+	return	dao.save(parking);	
+		
+	}
+
+	
+=======
 
 
 	@Override
@@ -47,6 +67,7 @@ public class ServiceParkingImpl implements ServiceParking {
 	}
 	
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Override
 	public List<Parking> fetchAll() {
 		return dao.findAll();
@@ -79,6 +100,11 @@ public class ServiceParkingImpl implements ServiceParking {
 	public List<Parking> findByLocation(String location) {
 		return dao.findByLocation(location);
 	}
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
+	
+	
+=======
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	
 }

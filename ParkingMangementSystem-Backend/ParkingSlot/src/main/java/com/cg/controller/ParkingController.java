@@ -43,5 +43,10 @@ public class ParkingController {
 	public List<Parking> findByLocation(@PathVariable("location") String location) {
 		return service.findByLocation(location);
 	}
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/controller/ParkingController.java
+	
+	
+=======
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/controller/ParkingController.java
 }

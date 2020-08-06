@@ -1,8 +1,13 @@
 package com.cg.beans;
 
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/example/application/beans/BookSlot.java
+import java.sql.Date;
+import javax.persistence.Column;
+=======
 
 import java.util.Date;
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/cg/beans/BookSlot.java
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +16,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 public class BookSlot {
@@ -27,7 +35,12 @@ public class BookSlot {
 	
 	private String location ;
 	
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/example/application/beans/BookSlot.java
+	@DateTimeFormat(pattern = "HH:mm")
+	private Date time;
+=======
 	private int slotNo ;
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/cg/beans/BookSlot.java
 	
 	private int hour;
 	
@@ -39,7 +52,32 @@ public class BookSlot {
 	
 	public BookSlot() {}
 
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/example/application/beans/BookSlot.java
+	public BookSlot(int srNo, int bookingId, Date date, Date time, int hour, int type, String vehicleNo,
+			int totalPrice) {
+		super();
+		this.srNo = srNo;
+		this.bookingId = bookingId;
+		this.date = date;
+		this.time = time;
+		this.hour = hour;
+		Type = type;
+		this.vehicleNo = vehicleNo;
+		TotalPrice = totalPrice;
+	}
+
+	public int getSrNo() {
+		return srNo;
+	}
+
+	public void setSrNo(int srNo) {
+		this.srNo = srNo;
+	}
+
+	public int getBookingId() {
+=======
 	public Integer getBookingId() {
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/cg/beans/BookSlot.java
 		return bookingId;
 	}
 
@@ -55,8 +93,11 @@ public class BookSlot {
 		this.date = date;
 	}
 
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/example/application/beans/BookSlot.java
+=======
 	
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/cg/beans/BookSlot.java
 	public Date getTime() {
 		return time;
 	}
@@ -113,6 +154,10 @@ public class BookSlot {
 		this.totalPrice = totalPrice;
 	}
 
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/example/application/beans/BookSlot.java
+	
+=======
 
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingBooking/src/main/java/com/cg/beans/BookSlot.java
 	
 }
