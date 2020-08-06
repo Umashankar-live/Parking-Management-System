@@ -1,5 +1,5 @@
 server:
-  port: 8037
+  port: 8039
  
 
 eureka:
@@ -17,10 +17,11 @@ eureka:
 
 spring:
   application:
-    name: login-microservice
+    name: booking-microservice
 
- 
 
 logging:
   level:
    com.cg: DEBUG
+
+ 

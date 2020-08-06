@@ -1,18 +1,19 @@
-package com.example.application.beans;
+package com.cg.beans;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 @Entity
 public class Slots {
 	
 	@Id
+<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/beans/Slots.java
 	@GeneratedValue(strategy = GenerationType.AUTO)
+=======
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+>>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/beans/Slots.java
 	private int srNo;
 	private int slots;
 	
