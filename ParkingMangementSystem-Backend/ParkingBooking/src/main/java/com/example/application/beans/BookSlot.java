@@ -1,13 +1,14 @@
 package com.example.application.beans;
 
 import java.sql.Date;
-import java.sql.Time;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 public class BookSlot {
@@ -20,7 +21,8 @@ public class BookSlot {
 	
 	private Date date;
 	
-	private Time time;
+	@DateTimeFormat(pattern = "HH:mm")
+	private Date time;
 	
 	private int hour;
 	
@@ -32,6 +34,19 @@ public class BookSlot {
 	private int TotalPrice;
 	
 	public BookSlot() {}
+
+	public BookSlot(int srNo, int bookingId, Date date, Date time, int hour, int type, String vehicleNo,
+			int totalPrice) {
+		super();
+		this.srNo = srNo;
+		this.bookingId = bookingId;
+		this.date = date;
+		this.time = time;
+		this.hour = hour;
+		Type = type;
+		this.vehicleNo = vehicleNo;
+		TotalPrice = totalPrice;
+	}
 
 	public int getSrNo() {
 		return srNo;
@@ -57,11 +72,11 @@ public class BookSlot {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 
@@ -96,9 +111,7 @@ public class BookSlot {
 	public void setTotalPrice(int totalPrice) {
 		TotalPrice = totalPrice;
 	}
-	
-	
-	
+
 	
 	
 }

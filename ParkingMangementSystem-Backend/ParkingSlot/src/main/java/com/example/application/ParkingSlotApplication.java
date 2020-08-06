@@ -12,11 +12,12 @@ import com.example.application.beans.Slots;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class ParkingSlotApplication {
-
+	
 	@Bean
-	public Slots slots() {
+	public Slots getslots() {
 		return new Slots();
 	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ParkingSlotApplication.class, args);
 	

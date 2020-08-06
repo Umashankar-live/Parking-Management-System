@@ -17,6 +17,9 @@ public interface ServiceParking {
 
 	List<Parking> findByLocation(String location);
 
+	
+
+
 
 
 }

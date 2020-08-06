@@ -11,7 +11,8 @@ import com.example.application.repository.ParkingDao;
 import com.example.application.repository.SlotDao;
 @Service
 public class ServiceImpl  implements ServiceParking{
-
+	
+	
 	@Autowired
 	private ParkingDao dao;
 	
@@ -19,32 +20,16 @@ public class ServiceImpl  implements ServiceParking{
 	private SlotDao sdao;
 	
 	@Autowired
-	private Slots slots = new Slots();
+	public Slots slots;
+	
+	
 	@Override
 	public Parking add(Parking parking) {
-		
-		
-		
-		for (int slot= 1; slot <= parking.getTwoWheelerTotal(); slot++) {
-		slots.setLocation( parking.getLocation());
-		slots.setSlots(slot);
-		slots.setStatus(true);
-		slots.setType(2);
-		sdao.save(slots);
-		}
-		
-		for (int b= 1; b <= parking.getFourWheelerAvailable(); b++) {
-			System.out.println(parking.getFourWheelerAvailable());
-			slots.setLocation( parking.getLocation());
-			slots.setSlots(b);
-			slots.setStatus(true);
-			slots.setType(4);
-			sdao.save(slots);
-			}
-		
-		return dao.save(parking);
+	return	dao.save(parking);	
 		
 	}
+
+	
 	@Override
 	public List<Parking> fetchAll() {
 		return dao.findAll();
@@ -77,5 +62,7 @@ public class ServiceImpl  implements ServiceParking{
 	public List<Parking> findByLocation(String location) {
 		return dao.findByLocation(location);
 	}
-
+	
+	
+	
 }

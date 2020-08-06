@@ -47,6 +47,7 @@ public class ParkingController {
 	@GetMapping("/all/location/{location}")
 	public List<Parking> findByLocation(@PathVariable("location")String location){
 		return service.findByLocation(location);
-	}	
+	}
+	
 	
 }
