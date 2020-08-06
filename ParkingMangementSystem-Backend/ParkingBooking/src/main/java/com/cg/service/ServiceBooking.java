@@ -6,6 +6,7 @@ import com.cg.beans.BookSlot;
 
 public interface ServiceBooking {
 	
+
 	List<BookSlot> fetchAll();
 
 	String delete(Integer bookingId);
@@ -13,5 +14,9 @@ public interface ServiceBooking {
 	List<BookSlot> findByLocation(String location);
 
 	BookSlot addSlot(BookSlot booking);
+
+	BookSlot getBooking(int bookingId);
+
+	List<BookSlot> getBookingByUserId(int userId);
 
 }

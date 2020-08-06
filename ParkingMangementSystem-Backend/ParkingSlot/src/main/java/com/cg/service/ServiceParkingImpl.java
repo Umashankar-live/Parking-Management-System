@@ -1,5 +1,6 @@
 package com.cg.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +12,23 @@ import com.cg.repository.ParkingDao;
 import com.cg.repository.SlotDao;
 
 @Service
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
-public class ServiceImpl  implements ServiceParking{
-	
-	
-=======
 public class ServiceParkingImpl implements ServiceParking {
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Autowired
 	private ParkingDao dao;
 
 	@Autowired
 	private SlotDao sdao;
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
 	
 	@Autowired
 	public Slots slots;
 	
-	
-	@Override
-	public Parking add(Parking parking) {
-	return	dao.save(parking);	
-		
-	}
 
-	
-=======
 
 
 	@Override
 	public Parking addSlot(Parking parking) {
-        
+		
 		for (int slot = 1; slot <= parking.getTwoWheelerTotal(); slot++) {
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
@@ -61,13 +47,13 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setType(4);
 			sdao.save(slots);
 		}
+		
 		return dao.save(parking);
 
 		
 	}
 	
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Override
 	public List<Parking> fetchAll() {
 		return dao.findAll();
@@ -100,11 +86,23 @@ public class ServiceParkingImpl implements ServiceParking {
 	public List<Parking> findByLocation(String location) {
 		return dao.findByLocation(location);
 	}
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
-	
-	
-=======
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	
+	public List<Slots> findSlotsByLocation(String location) {
+		return sdao.findSlotsByLocation(location);
+	}
+
+	@Override
+	public List<Slots> findByLocationAndType(String location, int type) {
+	List<Slots> list = findSlotsByLocation(location);	
+	List<Slots> newList = new ArrayList<Slots>();
+		for (Slots slots : list) {
+				if (type == slots.getType()) {
+					newList.add(slots);
+				}
+				
+		}
+	return newList;
+
+}
 }

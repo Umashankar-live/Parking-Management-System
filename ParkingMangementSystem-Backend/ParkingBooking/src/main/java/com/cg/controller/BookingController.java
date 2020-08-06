@@ -31,7 +31,13 @@ public class BookingController {
 		return service.fetchAll();
 	}
 
+	
+	@GetMapping("/booking/{bookingId}")
+	public BookSlot getBooking(@PathVariable int bookingId) {
+		return service.getBooking(bookingId);
+	}
 
+	
 	@DeleteMapping("/delete/{id}")
 	public String deleteBookSlot(@PathVariable("id") Integer bookingId) {
 		return service.delete(bookingId);
@@ -41,6 +47,15 @@ public class BookingController {
 	public List<BookSlot> findByLocation(@PathVariable("location") String location) {
 		return service.findByLocation(location);
 	}
+	
+	@GetMapping("/getBookingByUserId/{userId}")
+	public List<BookSlot> getBookingByUserId(@PathVariable int userId){
+		System.out.println("inBookingUserId");
+		return service.getBookingByUserId(userId);
+	}
+	
+	
+	
 	
 
 }

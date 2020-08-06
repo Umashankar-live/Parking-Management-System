@@ -9,11 +9,8 @@ import javax.persistence.Id;
 public class Slots {
 	
 	@Id
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/beans/Slots.java
-	@GeneratedValue(strategy = GenerationType.AUTO)
-=======
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/beans/Slots.java
 	private int srNo;
 	private int slots;
 	

@@ -1,4 +1,4 @@
-package com.example.application.beans;
+package com.cg.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
