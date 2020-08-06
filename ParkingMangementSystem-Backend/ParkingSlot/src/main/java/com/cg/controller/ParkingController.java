@@ -57,4 +57,15 @@ public class ParkingController {
 	public List<Parking> findByLocation(@PathVariable("location") String location) {
 		return service.findByLocation(location);
 	}
+<<<<<<< HEAD
 }
+=======
+	
+	@GetMapping("/all/location/{location}/{type}")
+	public List<Slots> findByLocationAndType(@PathVariable("location") String location,@PathVariable int type) {
+		return service.findByLocationAndType(location,type);
+	}
+	
+
+}
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065

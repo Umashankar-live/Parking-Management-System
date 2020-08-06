@@ -1,9 +1,17 @@
 package com.cg.beans;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
+<<<<<<< HEAD
+=======
+import javax.persistence.Column;
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +30,7 @@ public class BookSlot {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer bookingId;
 	
+<<<<<<< HEAD
 	private String fName ;
 	
 	@Temporal(TemporalType.DATE)
@@ -36,16 +45,71 @@ public class BookSlot {
 
 	private int slotNo ;
 
+=======
+	private LocalDate date ;
+	private String location ;
+	
+	
+	private LocalTime time;
+	private int slotNo ;
+	
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 	private int hour;
 	
 	private int Type;
 	
 	private String vehicleNo;
-	
+	private int userId;
+	private String userName; 
 	private int totalPrice;
 	
 	public BookSlot() {}
 
+<<<<<<< HEAD
+=======
+	
+
+	public BookSlot(Integer bookingId, LocalDate date, String location, LocalTime time, int slotNo, int hour, int type,
+			String vehicleNo, int userId, String userName, int totalPrice) {
+		super();
+		this.bookingId = bookingId;
+		this.date = date;
+		this.location = location;
+		this.time = time;
+		this.slotNo = slotNo;
+		this.hour = hour;
+		Type = type;
+		this.vehicleNo = vehicleNo;
+		this.userId = userId;
+		this.userName = userName;
+		this.totalPrice = totalPrice;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 	public Integer getBookingId() {
 		return bookingId;
 	}
@@ -54,6 +118,7 @@ public class BookSlot {
 		this.bookingId = bookingId;
 	}
 
+<<<<<<< HEAD
 	public String getfName() {
 		return fName;
 	}
@@ -63,10 +128,13 @@ public class BookSlot {
 	}
 
 	public Date getDate() {
+=======
+	public LocalDate getDate() {
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -78,11 +146,19 @@ public class BookSlot {
 		this.location = location;
 	}
 
+<<<<<<< HEAD
 	public Date getTime() {
 		return time;
 	}
 
 	public void setTime(Date time) {
+=======
+	public LocalTime getTime() {
+		return time;
+	}
+
+	public void setTime(LocalTime time) {
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 		this.time = time;
 	}
 
@@ -125,9 +201,14 @@ public class BookSlot {
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+<<<<<<< HEAD
 	
 	
 
 
+=======
+
+	
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 	
 }

@@ -16,12 +16,24 @@ public interface ServiceParking {
 	String delete(int srno);
 
 	List<Parking> findByLocation(String location);
+<<<<<<< HEAD
+=======
+
+	Parking addSlot(Parking parking);
+
+	List<Slots> findByLocationAndType(String location, int type);
+
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 	
 	String updateStatus (int slotId);
 
+<<<<<<< HEAD
 	Parking addSlot(Parking parking);
 	
 	Slots getSlotById (int slotId);
+=======
+
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 
 
 }

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Parking {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="SR.No")
 	private int srno;
 	

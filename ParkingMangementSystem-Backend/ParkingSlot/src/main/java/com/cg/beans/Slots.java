@@ -9,9 +9,15 @@ import javax.persistence.Id;
 public class Slots {
 	
 	@Id
+<<<<<<< HEAD
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int slotId;
 	
+=======
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int srNo;
+>>>>>>> c5b7c5ad7c3b87832ba1a2a148a211facbc31065
 	private int slots;
 	
 	private String location;
