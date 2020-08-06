@@ -33,7 +33,6 @@ public class BookSlot {
 	
 	private int hour;
 	
-
 	private int Type;
 	
 	private String vehicleNo;
