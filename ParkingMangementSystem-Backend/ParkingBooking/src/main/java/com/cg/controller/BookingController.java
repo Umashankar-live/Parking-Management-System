@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.cg.beans.BookSlot;
 import com.cg.service.ServiceBooking;
@@ -21,9 +22,16 @@ public class BookingController {
 	@Autowired
 	ServiceBooking service ;
 	
-	@PostMapping("/add")
-	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot) {
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@PostMapping("/add/{slotId}")
+	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot , @PathVariable("slotId") int slotId) {
+		
+		String status = restTemplate.getForObject("http://localhost:8035/updateStatus/"+slotId,String.class);
+		System.out.println(status);
 		return service.addSlot(BookSlot);
+		
 	}
 
 	@GetMapping("/get")

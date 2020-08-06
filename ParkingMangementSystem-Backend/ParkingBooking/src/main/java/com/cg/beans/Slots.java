@@ -1,19 +1,10 @@
-package com.example.application.beans;
+package com.cg.beans;
 
-import javax.annotation.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-@Entity
 public class Slots {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int srNo;
+	
+	private int slotId;
+	
 	private int slots;
 	
 	private String location;
@@ -24,21 +15,21 @@ public class Slots {
 	public Slots() {
 	}
 
-	public Slots(int srNo, int slots, String location, int type, boolean status) {
+	public Slots(int slotId, int slots, String location, int type, boolean status) {
 		super();
-		this.srNo = srNo;
+		this.slotId = slotId;
 		this.slots = slots;
 		this.location = location;
 		this.type = type;
 		this.status = status;
 	}
 
-	public int getSrNo() {
-		return srNo;
+	public int getslotId() {
+		return slotId;
 	}
 
-	public void setSrNo(int srNo) {
-		this.srNo = srNo;
+	public void setslotId(int slotId) {
+		this.slotId = slotId;
 	}
 
 	public int getSlots() {
@@ -73,6 +64,7 @@ public class Slots {
 		this.status = status;
 	}
 
+	
 	
 	
 	

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.beans.Parking;
+import com.cg.beans.Slots;
 import com.cg.service.ServiceParking;
 
 @RestController
@@ -29,24 +30,31 @@ public class ParkingController {
 		return service.fetchAll();
 	}
 
+	@GetMapping("/updateStatus/{id}")
+	public String updateStatus(@PathVariable("id") int slotId) {
+       
+		return service.updateStatus(slotId);	
+	}
+	
+	@GetMapping("/getSlotById/{id}")
+	public Slots findSlotById(@PathVariable("id") int slotId) {
+		
+		return service.getSlotById(slotId);
+		
+	}
+
 	@PostMapping("/all/update/{id}")
-	public Parking updateParking(@RequestBody Parking parking, @PathVariable("id") int srno) {
-		return service.update(parking, srno);
+	public Parking updateParking(@RequestBody Parking parking, @PathVariable("id") int slotId) {
+		return service.update(parking, slotId);
 	}
 
 	@DeleteMapping("/all/delete/{id}")
-	public String deleteParking(@PathVariable("id") int srno) {
-		return service.delete(srno);
+	public String deleteParking(@PathVariable("id") int slotId) {
+		return service.delete(slotId);
 	}
 
 	@GetMapping("/all/location/{location}")
 	public List<Parking> findByLocation(@PathVariable("location") String location) {
 		return service.findByLocation(location);
 	}
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/controller/ParkingController.java
-	
-	
-=======
-
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/controller/ParkingController.java
 }

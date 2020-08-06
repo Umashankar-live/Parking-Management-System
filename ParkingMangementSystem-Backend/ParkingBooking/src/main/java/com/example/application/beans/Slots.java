@@ -1,4 +1,4 @@
-package com.cg.beans;
+package com.example.application.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +9,8 @@ import javax.persistence.Id;
 public class Slots {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int slotId;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int srNo;
 	private int slots;
 	
 	private String location;
@@ -22,21 +21,21 @@ public class Slots {
 	public Slots() {
 	}
 
-	public Slots(int slotId, int slots, String location, int type, boolean status) {
+	public Slots(int srNo, int slots, String location, int type, boolean status) {
 		super();
-		this.slotId = slotId;
+		this.srNo = srNo;
 		this.slots = slots;
 		this.location = location;
 		this.type = type;
 		this.status = status;
 	}
 
-	public int getslotId() {
-		return slotId;
+	public int getSrNo() {
+		return srNo;
 	}
 
-	public void setslotId(int slotId) {
-		this.slotId = slotId;
+	public void setSrNo(int srNo) {
+		this.srNo = srNo;
 	}
 
 	public int getSlots() {
@@ -71,16 +70,6 @@ public class Slots {
 		this.status = status;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "Slots [slotId=" + slotId + ", slots=" + slots + ", location=" + location + ", type=" + type
-				+ ", status=" + status + "]";
-	}
-	
-	
-
-	
 	
 	
 	

@@ -11,38 +11,19 @@ import com.cg.repository.ParkingDao;
 import com.cg.repository.SlotDao;
 
 @Service
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
-public class ServiceImpl  implements ServiceParking{
-	
-	
-=======
 public class ServiceParkingImpl implements ServiceParking {
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Autowired
 	private ParkingDao dao;
 
 	@Autowired
 	private SlotDao sdao;
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
-	
-	@Autowired
-	public Slots slots;
-	
-	
-	@Override
-	public Parking add(Parking parking) {
-	return	dao.save(parking);	
-		
-	}
 
 	
-=======
-
 
 	@Override
 	public Parking addSlot(Parking parking) {
-        
+
 		for (int slot = 1; slot <= parking.getTwoWheelerTotal(); slot++) {
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
@@ -51,9 +32,9 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setType(2);
 			sdao.save(slots);
 		}
-		
-		for (int b =1 ; b <= parking.getFourWheelerAvailable(); b++) {
-			//System.out.println(parking.getFourWheelerAvailable())
+
+		for (int b = 1; b <= parking.getFourWheelerAvailable(); b++) {
+			// System.out.println(parking.getFourWheelerAvailable())
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
 			slots.setSlots(b);
@@ -63,11 +44,8 @@ public class ServiceParkingImpl implements ServiceParking {
 		}
 		return dao.save(parking);
 
-		
 	}
-	
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
 	@Override
 	public List<Parking> fetchAll() {
 		return dao.findAll();
@@ -91,20 +69,29 @@ public class ServiceParkingImpl implements ServiceParking {
 	}
 
 	@Override
-	public String delete(int srno) {
-		dao.deleteById(srno);
-		return "Parking Slot Removed Succesfully of Srno" + srno;
+	public String delete(int slotId) {
+		dao.deleteById(slotId);
+		return "Parking Slot Removed Succesfully of slotId" + slotId;
 	}
 
 	@Override
 	public List<Parking> findByLocation(String location) {
 		return dao.findByLocation(location);
 	}
-<<<<<<< HEAD:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/example/application/service/ServiceImpl.java
-	
-	
-=======
 
->>>>>>> a4cc817efab8b8447371080431b33ce9401a8756:ParkingMangementSystem-Backend/ParkingSlot/src/main/java/com/cg/service/ServiceParkingImpl.java
+	@Override
+	public Slots getSlotById(int slotId) {
 	
+		return sdao.findById(slotId).get();
+	}
+
+	@Override
+	public String updateStatus(int slotId) {
+	
+	 sdao.update(slotId);
+	  return "Status Updated for the slots";
+		
+		
+	}
+
 }
