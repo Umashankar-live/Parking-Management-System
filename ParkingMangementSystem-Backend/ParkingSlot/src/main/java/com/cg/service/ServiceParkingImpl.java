@@ -11,7 +11,7 @@ import com.cg.repository.ParkingDao;
 import com.cg.repository.SlotDao;
 
 @Service
-public class ServiceImpl implements ServiceParking {
+public class ServiceParkingImpl implements ServiceParking {
 
 	@Autowired
 	private ParkingDao dao;

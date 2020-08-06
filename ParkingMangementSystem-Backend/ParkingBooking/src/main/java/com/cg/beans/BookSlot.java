@@ -1,51 +1,50 @@
 package com.cg.beans;
 
-import java.sql.Date;
-import java.sql.Time;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class BookSlot {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int srNo;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer bookingId;
 	
-	private int bookingId;
+	@Temporal(TemporalType.DATE)
+	private Date date ;
 	
-	private Date date;
+	@DateTimeFormat(pattern = "HH:mm")
+	private Date time ; 
 	
-	private Time time;
+	private String location ;
+	
+	private int slotNo ;
 	
 	private int hour;
 	
-	@Column(name="2_Wheeler = 2, 4_Wheeler = 4")
+
 	private int Type;
 	
 	private String vehicleNo;
 	
-	private int TotalPrice;
+	private int totalPrice;
 	
 	public BookSlot() {}
 
-	public int getSrNo() {
-		return srNo;
-	}
-
-	public void setSrNo(int srNo) {
-		this.srNo = srNo;
-	}
-
-	public int getBookingId() {
+	public Integer getBookingId() {
 		return bookingId;
 	}
 
-	public void setBookingId(int bookingId) {
+	public void setBookingId(Integer bookingId) {
 		this.bookingId = bookingId;
 	}
 
@@ -57,12 +56,30 @@ public class BookSlot {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	
+
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public int getSlotNo() {
+		return slotNo;
+	}
+
+	public void setSlotNo(int slotNo) {
+		this.slotNo = slotNo;
 	}
 
 	public int getHour() {
@@ -90,15 +107,13 @@ public class BookSlot {
 	}
 
 	public int getTotalPrice() {
-		return TotalPrice;
+		return totalPrice;
 	}
 
 	public void setTotalPrice(int totalPrice) {
-		TotalPrice = totalPrice;
+		this.totalPrice = totalPrice;
 	}
-	
-	
-	
-	
+
+
 	
 }
