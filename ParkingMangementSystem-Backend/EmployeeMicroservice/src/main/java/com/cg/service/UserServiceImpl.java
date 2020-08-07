@@ -21,30 +21,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean deleteUser(int empId) {
-		eDao.deleteById(empId);
+	public boolean deleteUser(int userId) {
+		eDao.deleteById(userId);
 		return true;
 	}
 
-	@Override
-	public User checkRole(int empId) {
-		User User = eDao.findById(empId).get();
-		return User;
-	}
+	
 
 	@Override
-	public List<User> getAllParticipant() {
-//		List<User> originalList = this.eDao.findAll();
-//		List<User> participantList = new ArrayList<>();
-//		for (int i = 0; i < originalList.size(); i++) {
-//			if(originalList.get(i).getRole().equalsIgnoreCase("participant")) {
-//			   participantList.add(originalList.get(i)); 
-//			}
-//		}
-//		
-//		return participantList ;
+	public List<User> getAllCustomer() {
 		
-		return this.eDao.findAll().stream().filter(f->f.getRole().equalsIgnoreCase("participant")).collect(Collectors.toList());
+		return this.eDao.findAll().stream().filter(f->f.getRole().equalsIgnoreCase("customer")).collect(Collectors.toList());
 	
 		
 	}

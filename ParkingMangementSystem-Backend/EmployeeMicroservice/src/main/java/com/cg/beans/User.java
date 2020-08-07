@@ -16,10 +16,10 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="User_Id")
-	private Integer UserId;
+	private Integer userId;
 	
 	@Column(name="User_Name")
-	private String UserName;
+	private String userName;
 	
 	@Column(name="Password")
 	private String password;
@@ -31,28 +31,28 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Integer UserId, String UserName, String password, String role) {
+	public User(Integer userId, String userName, String password, String role) {
 		super();
-		this.UserId = UserId;
-		this.UserName = UserName;
+		this.userId = userId;
+		this.userName = userName;
 		this.password = password;
 		this.role = role;
 	}
 
 	public Integer getUserId() {
-		return UserId;
+		return userId;
 	}
 
-	public void setUserId(Integer UserId) {
-		this.UserId = UserId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
-	public void setUserName(String UserName) {
-		this.UserName = UserName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {

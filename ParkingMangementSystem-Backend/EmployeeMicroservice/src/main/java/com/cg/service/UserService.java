@@ -15,8 +15,7 @@ public interface UserService {
 	
 	public User addUser(User e);
 	public List<User> getallUser();
-	public boolean deleteUser(int empId);
-	public User checkRole(int empId);
-	public List<User> getAllParticipant();
+	public boolean deleteUser(int userId);
+	public List<User> getAllCustomer();
 
 }
