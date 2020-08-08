@@ -26,6 +26,7 @@ public class ParkingController {
 
 	@PostMapping("/add")
 	public Parking addParking(@RequestBody Parking parking) {
+		
 		return service.addSlot(parking);
 	}
 

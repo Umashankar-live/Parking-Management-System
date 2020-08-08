@@ -16,11 +16,7 @@ export class BookParkingComponent implements OnInit {
   constructor(private service : CustomerService, private route : Router) { }
 
   ngOnInit() {
-<<<<<<< HEAD
     this.slot = new Slots();
-=======
-    this.slot= new Slots;
->>>>>>> 07c5934e86432d787a11bc8741c118e5c82af1ea
     
   }
 
