@@ -1,3 +1,21 @@
-<p>
-  customer works!
-</p>
+<div class="container">
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <ul class="navbar-nav">
+                
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['userlist']">List</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['bookparking']">BookSlot</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['bookinginfo']">BookingInfo</a>
+        </li>
+        
+          
+          </ul>
+    </nav>
+  <router-outlet></router-outlet>
+    </div>

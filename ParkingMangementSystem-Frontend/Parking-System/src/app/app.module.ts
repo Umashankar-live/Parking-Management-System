@@ -12,12 +12,16 @@ import { RegisterComponent } from './register/register.component';
 import { CustomerComponent } from './customer/customer.component';
 import { BookParkingComponent } from './book-parking/book-parking.component';
 import { BookingInfoComponent } from './booking-info/booking-info.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
   {path:'admin' , component:AdminComponent},
   {path:'customer',component:CustomerComponent},
   {path:'register',component:RegisterComponent},
+  {path:'userlist',component:UserListComponent},
+  {path:'bookparking',component:BookParkingComponent},
+  {path:'bookinginfo',component:BookingInfoComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
  
@@ -31,7 +35,8 @@ const routes : Routes = [
     RegisterComponent,
     CustomerComponent,
     BookParkingComponent,
-    BookingInfoComponent
+    BookingInfoComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
