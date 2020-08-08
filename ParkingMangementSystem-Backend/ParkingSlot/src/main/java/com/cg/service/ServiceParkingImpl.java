@@ -32,6 +32,7 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setSlots(slot);
 			slots.setStatus(true);
 			slots.setType(2);
+			slots.setPrice(5);
 			sdao.save(slots);
 		}
 
@@ -41,6 +42,7 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setSlots(b);
 			slots.setStatus(true);
 			slots.setType(4);
+			slots.setPrice(10);
 			sdao.save(slots);
 		}
 

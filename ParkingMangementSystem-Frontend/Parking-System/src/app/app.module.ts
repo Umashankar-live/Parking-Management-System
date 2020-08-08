@@ -10,8 +10,13 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerComponent } from './customer/customer.component';
+<<<<<<< HEAD
 import { BookSlotComponent } from './book-slot/book-slot.component';
 
+=======
+import { BookParkingComponent } from './book-parking/book-parking.component';
+import { BookingInfoComponent } from './booking-info/booking-info.component';
+>>>>>>> ae50ecdbb54ea1f1c1de16bd8609f0a85d452115
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -30,8 +35,13 @@ const routes : Routes = [
     AdminComponent,
     RegisterComponent,
     CustomerComponent,
+<<<<<<< HEAD
     BookSlotComponent,
     
+=======
+    BookParkingComponent,
+    BookingInfoComponent
+>>>>>>> ae50ecdbb54ea1f1c1de16bd8609f0a85d452115
   ],
   imports: [
     BrowserModule,
