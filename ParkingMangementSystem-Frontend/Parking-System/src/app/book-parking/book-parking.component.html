@@ -14,7 +14,7 @@
      placeholder="Type of vehicle" class="form-control"  #type=ngModel>
      <br><br>
      
-     <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid" (click)=bookSlot(slot)>SEARCH</button> 
+     <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid" >SEARCH</button> 
      <br><br>
      
      <a href="/customer" class="btn btn-outline-info" role="button" aria-disabled="true">Back To Menu</a>
@@ -27,13 +27,15 @@
           <tr>
             <th>Location</th>
             <th>Seats</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let s of slots">
             <td> {{s.location}} </td>
-            <td> {{s.type}} </td>             
-          <td> <button class="btn btn-primary" (click)=bookSlot(slot)>Book</button> </td>        
+            <td> {{s.type}} </td>
+            <td>{{s.price}}</td>             
+          <td> <button class="btn btn-primary" (click)=bookSlot(s)>Book</button> </td>        
             </tr>
         
           </tbody>

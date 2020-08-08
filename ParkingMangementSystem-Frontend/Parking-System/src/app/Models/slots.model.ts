@@ -3,5 +3,6 @@ export class Slots {
     slots : number;
     location : String;
     type: number ;
-    status : boolean
+    status : boolean;
+    price : number;
 }

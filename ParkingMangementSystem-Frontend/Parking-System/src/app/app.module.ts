@@ -27,6 +27,7 @@ const routes : Routes = [
   {path:'list-parking',component:ListParkingComponent},
   {path:'list-booking',component:BookParkingComponent},
   {path:'customer/bookparking',component:BookParkingComponent},
+  {path:'customer/userlist',component:UserListComponent},
   {path:'slot',component:SlotInfoComponent},
   {path:'bookinginfo',component:BookingInfoComponent},
   {path:'add-parking',component:AddParkingComponent},

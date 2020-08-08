@@ -1,3 +1,46 @@
-<p>
-  slot-info works!
-</p>
+<form (ngSubmit)="bookSlot()" class="text-center border border-light p-5" #addForm=ngForm > 
+
+
+
+  <label> Location</label>
+  <input [(ngModel)]=slot.location name="location"
+   placeholder="Enter the Location" class="form-control" #location=ngModel readonly>
+   <br><br>
+  
+   <label> Type</label>
+  <input [(ngModel)]=slot.type name="type"
+   placeholder="Enter the Type"  class="form-control" #destination=ngModel readonly> 
+   <br><br>
+
+   
+   <label>Price</label>
+  <input [(ngModel)]=slot.price name="price"
+   placeholder="Price" class="form-control"  #price=ngModel readonly>
+   <br><br>
+   
+   <label>Enter Date </label>
+  <input [(ngModel)]="book.date" class="form-control" name="date" type="text"
+   placeholder="Enter Date"  #date=ngModel >
+   <br><br>
+ 
+   <label>Enter Time</label>
+  <input [(ngModel)]="book.time" class="form-control" name="time" type="text"
+   placeholder="Enter Time"  #time=ngModel >
+   <br><br>
+    
+   <label>Enter Vehicle Number</label>
+  <input [(ngModel)]="book.vehicleNo" class="form-control" name="vehicleNo" type="text"
+   placeholder="Enter Vehicle Number"  #vehicleNo=ngModel >
+   <br><br>
+
+  
+
+   <label>Enter Hours for Parking</label>
+  <input [(ngModel)]="book.hour" class="form-control" name="hour" type="number"
+   placeholder="Enter Hours for Parking"  #hour=ngModel >
+   <br><br>
+ 
+  
+   <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">Book Bus</button> 
+   </form>
+ 
