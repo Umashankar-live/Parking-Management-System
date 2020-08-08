@@ -23,7 +23,7 @@ export class AddParkingComponent implements OnInit {
     console.log(this.parking);
     this.service.addParking(this.parking).subscribe(response => {
       
-      this.route.navigate(['list-parking']);
+      this.route.navigate(['bookinglist']);
     })
 
   }
@@ -37,7 +37,7 @@ export class AddParkingComponent implements OnInit {
   }
 
   clickOnListBooking() {
-    this.route.navigate(['list-booking']);
+    this.route.navigate(['bookinglist']);
   }
 
   logout() {

@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
   }
 
   clickOnListBooking(){
-    this.route.navigate(['list-booking']);
+    this.route.navigate(['bookinglist']);
   }
 
   logout(){

@@ -31,7 +31,7 @@ const routes : Routes = [
   {path:'bookinginfo',component:BookingInfoComponent},
   {path:'add-parking',component:AddParkingComponent},
   {path:'list-parking',component:ListParkingComponent},
-  {path:'list-booking',component:ListBookingComponent},
+  {path:'bookinglist',component:ListBookingComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
 ];
