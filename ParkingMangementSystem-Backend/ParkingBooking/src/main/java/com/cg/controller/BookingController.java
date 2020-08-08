@@ -30,7 +30,7 @@ public class BookingController {
 	@PostMapping("/add/{slotId}")
 	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot , @PathVariable("slotId") int slotId) {
 		
-		String status = restTemplate.getForObject("http://localhost:8035/updateStatus/"+slotId,String.class);
+		String status = restTemplate.getForObject("http://localhost:8035/parking/updateStatus/"+slotId,String.class);
 		System.out.println(status);
 		return service.addSlot(BookSlot);
 		
@@ -42,10 +42,12 @@ public class BookingController {
 	}
 
 	
-	@GetMapping("/booking/{bookingId}")
-	public BookSlot getBooking(@PathVariable int bookingId) {
-		return service.getBooking(bookingId);
+	@GetMapping("/getbyId/{bookingId}")
+	public BookSlot getBookingById(@PathVariable int bookingId) {
+		return service.getBookingById(bookingId);
 	}
+	
+	
 
 	
 	@DeleteMapping("/delete/{id}")

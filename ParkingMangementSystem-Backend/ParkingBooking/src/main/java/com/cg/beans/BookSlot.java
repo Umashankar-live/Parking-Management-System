@@ -30,7 +30,7 @@ public class BookSlot {
 
 	private int hour;
 	
-	private int Type;
+	private int type;
 	
 	private String vehicleNo;
 	
@@ -49,7 +49,7 @@ public class BookSlot {
 		this.time = time;
 		this.slotNo = slotNo;
 		this.hour = hour;
-		Type = type;
+		this.type = type;
 		this.vehicleNo = vehicleNo;
 		this.userName = userName;
 		this.totalPrice = totalPrice;
@@ -106,11 +106,11 @@ public class BookSlot {
 	}
 
 	public int getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(int type) {
-		Type = type;
+		this.type = type;
 	}
 
 	public String getVehicleNo() {

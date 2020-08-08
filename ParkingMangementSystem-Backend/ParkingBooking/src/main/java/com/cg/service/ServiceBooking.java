@@ -15,7 +15,7 @@ public interface ServiceBooking {
 
 	BookSlot addSlot(BookSlot booking);
 
-	BookSlot getBooking(int bookingId);
+	BookSlot getBookingById(int bookingId);
 
 	List<BookSlot> getBookingByUsername(String username);
 

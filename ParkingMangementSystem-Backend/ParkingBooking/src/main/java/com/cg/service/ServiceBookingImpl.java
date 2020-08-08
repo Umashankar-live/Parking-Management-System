@@ -46,7 +46,7 @@ public class ServiceBookingImpl implements ServiceBooking {
 	}
 
 	@Override
-	public BookSlot getBooking(int bookingId) {
+	public BookSlot getBookingById(int bookingId) {
 		
 		return bdao.findById(bookingId).get();
 	}

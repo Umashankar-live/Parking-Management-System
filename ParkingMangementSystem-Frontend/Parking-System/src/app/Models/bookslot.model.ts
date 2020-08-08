@@ -5,7 +5,7 @@ export class BookSlot {
     time : Date ;
     slotNo : number ;
     hour : number ;
-    Type : number ;
+    type : number ;
     vehicleNo : String ;
     userName : String ;
     totalPrice : number ;
