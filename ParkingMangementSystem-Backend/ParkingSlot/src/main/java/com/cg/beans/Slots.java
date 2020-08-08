@@ -88,8 +88,10 @@ public class Slots {
 	@Override
 	public String toString() {
 		return "Slots [slotId=" + slotId + ", slots=" + slots + ", location=" + location + ", type=" + type
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", price=" + price + "]";
 	}
+
+	
 	
 	
 
