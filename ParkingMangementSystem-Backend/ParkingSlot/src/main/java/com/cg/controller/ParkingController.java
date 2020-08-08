@@ -29,6 +29,7 @@ public class ParkingController {
 		return service.addSlot(parking);
 	}
 
+	//http://localhost:8035/parking/getAll
 	@GetMapping("/getAll")
 	public List<Parking> fetchAll() {
 		return service.fetchAll();
