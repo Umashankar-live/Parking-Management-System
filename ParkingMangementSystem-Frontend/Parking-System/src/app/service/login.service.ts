@@ -15,6 +15,6 @@ export class LoginService {
 
    getUser(login : Login){
      console.log(login);
-     return this.http.post<UserModel>("http://laptop-1vm6bdau:8037/login/validate",login);
+     return this.http.post<UserModel>("http://192.168.2.206:8037/login/validate",login);
    }
 }

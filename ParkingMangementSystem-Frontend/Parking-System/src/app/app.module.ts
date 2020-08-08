@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerComponent } from './customer/customer.component';
+import { BookParkingComponent } from './book-parking/book-parking.component';
+import { BookingInfoComponent } from './booking-info/booking-info.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -27,7 +29,9 @@ const routes : Routes = [
     LoginComponent,
     AdminComponent,
     RegisterComponent,
-    CustomerComponent
+    CustomerComponent,
+    BookParkingComponent,
+    BookingInfoComponent
   ],
   imports: [
     BrowserModule,

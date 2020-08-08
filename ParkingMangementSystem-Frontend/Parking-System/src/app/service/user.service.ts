@@ -10,11 +10,11 @@ export class UserService {
   constructor(private http : HttpClient) { }
 
   fetchAllUser(){
-    return this.http.get<UserModel[]>("http://laptop-1vm6bdau:8034/User/getAllUsers");
+    return this.http.get<UserModel[]>("http://192.168.2.206:8034/User/getAllUsers");
   }
 
   registerUser(user: UserModel) {
-    return this.http.post<UserModel>("http://laptop-1vm6bdau:8034//User/addUser", user);
+    return this.http.post<UserModel>("http://192.168.2.206:8034/User/addUser", user);
   }
 
 
