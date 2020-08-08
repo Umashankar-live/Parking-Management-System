@@ -10,25 +10,20 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerComponent } from './customer/customer.component';
-<<<<<<< HEAD
 import { BookParkingComponent } from './book-parking/book-parking.component';
 import { BookingInfoComponent } from './booking-info/booking-info.component';
 import { UserListComponent } from './user-list/user-list.component';
-=======
-import {BookParkingComponent} from './book-parking/book-parking.component';
-import {BookingInfoComponent} from './booking-info/booking-info.component';
-
-
->>>>>>> 463d243fc10401825256aa660e5f2edefd4004df
+import { SlotInfoComponent } from './slot-info/slot-info.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
   {path:'admin' , component:AdminComponent},
   {path:'customer',component:CustomerComponent},
   {path:'register',component:RegisterComponent},
-  {path:'userlist',component:UserListComponent},
-  {path:'bookparking',component:BookParkingComponent},
-  {path:'bookinginfo',component:BookingInfoComponent},
+  {path:'customer/userlist',component:UserListComponent},
+  {path:'customer/bookparking',component:BookParkingComponent},
+  {path:'customer/bookinginfo',component:BookingInfoComponent},
+  {path:'slot',component:SlotInfoComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
  
@@ -43,7 +38,8 @@ const routes : Routes = [
     CustomerComponent,
     BookParkingComponent,
     BookingInfoComponent,
-    UserListComponent
+    UserListComponent,
+    SlotInfoComponent
   ],
   imports: [
     BrowserModule,

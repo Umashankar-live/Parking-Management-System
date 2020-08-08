@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Parking} from '../Models/parking.model';
 import {CustomerService} from '../service/customer.service';
 import {Router} from '@angular/router';
+import { Slots } from '../Models/slots.model';
 
 @Component({
   selector: 'app-book-parking',
@@ -9,20 +10,28 @@ import {Router} from '@angular/router';
   styleUrls: ['./book-parking.component.css']
 })
 export class BookParkingComponent implements OnInit {
-  ParkingList : Parking[]=[] ;
+  slot:Slots
+  parking : Parking[]=[] ;
+  slots:Slots[]=[];
   constructor(private service : CustomerService, private route : Router) { }
 
   ngOnInit() {
-    setTimeout(() => { this.reloadData()},100) ;
+    this.slot;
+    
   }
 
-  reloadData() {
-    this.service.fetchAllParking().subscribe(data => {
-      this.ParkingList = data ;
-      console.log(this.ParkingList);
-    })
-  }
 
+  searchSlot(){
+   
+    this.service.findSlot(this.slot).subscribe(response=>{this.slots=response;})
   
+    }
 
-}
+    bookSlot(slot:Slots){
+     this.route.navigate(['/bookslot',slot]);
+    }
+  
+  
+  }
+
+
