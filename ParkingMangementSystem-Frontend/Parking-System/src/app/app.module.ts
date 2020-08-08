@@ -10,9 +10,16 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerComponent } from './customer/customer.component';
+<<<<<<< HEAD
 import { BookParkingComponent } from './book-parking/book-parking.component';
 import { BookingInfoComponent } from './booking-info/booking-info.component';
 import { UserListComponent } from './user-list/user-list.component';
+=======
+import {BookParkingComponent} from './book-parking/book-parking.component';
+import {BookingInfoComponent} from './booking-info/booking-info.component';
+
+
+>>>>>>> 463d243fc10401825256aa660e5f2edefd4004df
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -49,4 +56,5 @@ const routes : Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
