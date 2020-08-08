@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07c5934e86432d787a11bc8741c118e5c82af1ea
 <form (ngSubmit)="searchSlot()" class="text-center border border-light p-5" #addForm=ngForm >
 
     <p class="h4 mb-4">Search</p>
@@ -14,7 +18,7 @@
      placeholder="Type of vehicle" class="form-control"  #type=ngModel>
      <br><br>
      
-     <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">SEARCH</button> 
+     <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid" (click)=bookSlot(slot)>SEARCH</button> 
      <br><br>
      
      <a href="/customer" class="btn btn-outline-info" role="button" aria-disabled="true">Back To Menu</a>
@@ -33,7 +37,7 @@
           <tr *ngFor="let s of slots">
             <td> {{s.location}} </td>
             <td> {{s.type}} </td>             
-          <td> <button class="btn btn-primary" (click)=bookSlot(slot)>Book Bus</button> </td>        
+          <td> <button class="btn btn-primary" (click)=bookSlot(slot)>Book</button> </td>        
             </tr>
         
           </tbody>

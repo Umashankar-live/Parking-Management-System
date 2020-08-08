@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminService {
 
+<<<<<<< HEAD
   constructor(private http: HttpClient) { }
 
   addParking(parking: Parking) {
@@ -15,4 +16,12 @@ export class AdminService {
   }
 
 
+=======
+  constructor() { }
+
+
+  addParking(){
+    
+  }
+>>>>>>> 07c5934e86432d787a11bc8741c118e5c82af1ea
 }
