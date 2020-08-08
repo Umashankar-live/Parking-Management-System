@@ -4,63 +4,54 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="row">    
-            <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
-                <ul class="sidenav admin-sidenav list-unstyled">
-                    <li><a (click)="clickOnAddParking()">Add Parking</a></li>
-                    <li><a (click)="clickOnListParking()">List of Parking</a></li>
-                    <li><a (click)="clickOnListBooking()">List Of Booking</a></li>
-                    <li><a (click)="logout()">Logout</a></li>
-                </ul>
-            </div> 
-            <!-- Enter the code here -->
+  <div class="container-fluid">
+    <div class="row">
+      <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+        <ul class="sidenav admin-sidenav list-unstyled">
+          <li><a (click)="clickOnAddParking()">Add Parking</a></li>
+          <li><a (click)="clickOnListParking()">List of Parking</a></li>
+          <li><a (click)="clickOnListBooking()">List Of Booking</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+      <!-- Enter the code here -->
 
-            <md-grid-list cols="3">
-              <md-grid-tile [colspan]="1" [rowspan]="1">
-              </md-grid-tile>
-              <md-grid-tile [colspan]="1" [rowspan]="1"  style="height: 150px">
-                
-                <form class="example-form"  (ngSubmit)="saveParking(); addParkingForm.reset()" #addParkingForm=ngForm>
-            
-                  <md-card class="example-card">
-                    <md-card-header>
-                      <md-card-title><h2>Add New Location</h2></md-card-title>
-                    </md-card-header>
-                    <md-card-content>
-            
-                      <md-input-container class="example-full-width">
-                        <select  name="role" [(ngModel)]="parking.location" #role = ngModel > 
-                          <option value="null" disabled>Select location</option>
-                          <option value="Shivajinagar">Shivajinagar</option>
-                          <option value="Hadapsar">Hadapsar</option>
-                          <option value="Nanapeth">Nanapeth</option>
-                        </select>
-                      </md-input-container>
-            
-                      <md-input-container class="example-full-width">
-                        <input type="number" [(ngModel)]="parking.twoWheelerTotal" #twowheel = ngModel required min="1" max="500" md-input placeholder="Number Of two wheeler Slots" > 
-                        <md-hint *ngIf="twowheel.touched && twowheel.hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
-                      </md-input-container>
+      <form (ngSubmit)="saveParking(); addParkingForm.reset()" #addParkingForm=ngForm>
+        <div>
+          <table class="table table-striped ">
+            <tr>
+              <td><label> Location </label></td>
+              <td>
+                <select name="role" [(ngModel)]="parking.location" #location=ngModel>
+                  <option value="null" disabled >Select location</option>
+                  <option value="Shivajinagar">Shivajinagar</option>
+                  <option value="Hadapsar">Hadapsar</option>
+                  <option value="Nanapeth">Nanapeth</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Two Wheeler Slots</label></td>
+              <td>
+                <input type="number" name="twowheeler" class="form-control" [(ngModel)]=parking.twoWheelertotal
+                  placeholder="Enter Here" required min="1" max="500" #twowheel=ngModel>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Four Wheeler Slots</label></td>
+              <td>
+                <input type="number" name="Fourwheeler" class="form-control" [(ngModel)]=parking.fourWheelertotal
+                  placeholder="Enter Here" required min="1" max="500" #fourwheel=ngModel>
+              </td>
+            </tr>
 
-                      <md-input-container class="example-full-width">
-                        <input type="number" [(ngModel)]="parking.fourWheelerTotal" #fourwheel = ngModel required min="1" max="500" md-input placeholder="Number Of four wheeler Slots" > 
-                        <md-hint *ngIf="fourwheel.touched && fourwheel.hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
-                      </md-input-container>
-                  
-                    </md-card-content>
-                    <md-card-actions class="text-right padding-right-20 padding-bottom-10">
-                      <span class="example-spacer"></span>
-                      <button md-button md-raised-button color="primary" type="submit">Add</button>
-                    </md-card-actions>
-                  </md-card>
-            
-                </form>
-            
-              </md-grid-tile>
-              <md-grid-tile [colspan]="1" [rowspan]="1">    
-              </md-grid-tile>
-            </md-grid-list>         
+          </table>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit" [disabled]="!addParkingForm.valid">Add Parking</button>
+        </div>
+      </form>

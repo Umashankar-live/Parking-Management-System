@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Parking} from '../Models/parking.model';
+import { Parking } from "../Models/parking.model";
 import {CustomerService} from '../service/customer.service';
 import {Router} from '@angular/router';
 import { Slots } from '../Models/slots.model';
@@ -16,7 +16,7 @@ export class BookParkingComponent implements OnInit {
   constructor(private service : CustomerService, private route : Router) { }
 
   ngOnInit() {
-    this.slot;
+    this.slot = new Slots();
     
   }
 
