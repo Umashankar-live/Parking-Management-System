@@ -11,20 +11,19 @@ import com.cg.dao.BookingDao;
 
 @Service
 public class ServiceBookingImpl implements ServiceBooking {
-	
+
 	@Autowired
-	BookingDao bdao ;
+	BookingDao bdao;
 
 	@Override
 	public BookSlot addSlot(BookSlot booking) {
 		return bdao.save(booking);
 	}
-	
+
 	@Override
 	public List<BookSlot> fetchAll() {
-		return bdao.findAll(); 
+		return bdao.findAll();
 	}
-
 
 	@Override
 	public String delete(Integer bookingId) {
@@ -37,19 +36,17 @@ public class ServiceBookingImpl implements ServiceBooking {
 		return bdao.findByLocation(location);
 	}
 
-
 	@Override
-	public List<BookSlot> getBookingByUsername(String username) {
-		//return bdao.findAll().stream().filter(x->x.getUserName(). ==username).findAny().get();
-		
-		return bdao.findAll().stream().filter(x -> x.getUserName().equalsIgnoreCase(username)).collect(Collectors.toList());
+	public List<BookSlot> getBookingByUsername(String userName) {
+
+		return bdao.findAll().stream().filter(x -> x.getUserName().equalsIgnoreCase(userName))
+				.collect(Collectors.toList());
 	}
 
 	@Override
-	public BookSlot getBookingById(int bookingId) {
-		
+	public BookSlot getBookingById(Integer bookingId) {
+
 		return bdao.findById(bookingId).get();
 	}
-
 
 }

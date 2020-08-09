@@ -13,6 +13,7 @@ export class BookParkingComponent implements OnInit {
   slot:Slots
   parking : Parking[]=[] ;
   slotList:Slots[]=[];
+  bname: String;
   constructor(private service : CustomerService, private route : Router) { }
 
   ngOnInit() {
@@ -28,13 +29,26 @@ export class BookParkingComponent implements OnInit {
   
     }
 
-<<<<<<< HEAD
     bookSlot(slots:Slots){
      this.route.navigate(['/slot',slots]);
-=======
-    bookSlot(sid:number ,loc : String ,typ : number ,pri : number){
-     this.route.navigate(['/slot',sid,loc,typ,pri]);
->>>>>>> eb4815c49078682076a9d9766d5326c7a8d6350c
+    }
+
+    clickOnBook(){
+      this.route.navigate(['list-booking']);
+    }
+  
+    clickOnBookInfo(){
+      this.bname= sessionStorage.getItem('userName')
+        this.route.navigate(['bookinginfo',this.bname]);
+      }
+      
+    clickOnregister(){
+      this.route.navigate(['userlist']);
+    }
+  
+    logout(){
+      sessionStorage.clear();
+      this.route.navigate(['login']);
     }
   
   

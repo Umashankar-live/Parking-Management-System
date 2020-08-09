@@ -5,7 +5,6 @@ import java.util.List;
 import com.cg.beans.BookSlot;
 
 public interface ServiceBooking {
-	
 
 	List<BookSlot> fetchAll();
 
@@ -15,9 +14,8 @@ public interface ServiceBooking {
 
 	BookSlot addSlot(BookSlot booking);
 
-	BookSlot getBookingById(int bookingId);
+	BookSlot getBookingById(Integer bookingId);
 
-	List<BookSlot> getBookingByUsername(String username);
-
+	List<BookSlot> getBookingByUsername(String userName);
 
 }

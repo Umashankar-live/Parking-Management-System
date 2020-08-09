@@ -1,19 +1,25 @@
-<div class="container">
-  <nav class="navbar navbar-expand-sm bg-light navbar-light">
-      <ul class="navbar-nav">
-                
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['userlist']">List</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['bookparking']">BookSlot</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['bookinginfo']">BookingInfo</a>
-        </li>
-          </ul>
-    </nav>
-  <router-outlet></router-outlet>
-    </div>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">    
+                <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+                    <ul class="sidenav admin-sidenav list-unstyled">
+                        <li><a (click)="clickOnBook()">Book a Slot</a></li>
+                        <li><a (click)="clickOnBookInfo()">Booking Info</a></li>
+                        <li><a (click)="clickOnregister()">View Parking</a></li>
+                        <li><a (click)="logout()">Logout</a></li>
+                    </ul>
+                </div>
+  
+                <h1>Welcome Customer!</h1>
+            </div> <!-- /.row -->
+        </div> <!-- /.container-fluid -->
+    </body> 

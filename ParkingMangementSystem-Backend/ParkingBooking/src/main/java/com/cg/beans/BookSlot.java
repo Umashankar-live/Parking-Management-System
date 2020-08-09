@@ -1,7 +1,5 @@
 package com.cg.beans;
 
-
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -10,36 +8,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
-
 @Entity
 public class BookSlot {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer bookingId;
-	
-	private LocalDate date ;
-	
-	private String location ;
-	
+
+	private LocalDate date;
+
+	private String location;
+
 	private LocalTime time;
 
-	private int slotNo ;
+	private int slotNo;
 
 	private int hour;
-	
+
 	private int type;
-	
+
 	private String vehicleNo;
-	
-	private String userName; 
-	
+
+	private String userName;
+
 	private int totalPrice;
-	
-	public BookSlot() {}
-	
+
+	public BookSlot() {
+	}
+
 	public BookSlot(Integer bookingId, LocalDate date, String location, LocalTime time, int slotNo, int hour, int type,
 			String vehicleNo, String userName, int totalPrice) {
 		super();
@@ -54,8 +50,6 @@ public class BookSlot {
 		this.userName = userName;
 		this.totalPrice = totalPrice;
 	}
-
-
 
 	public Integer getBookingId() {
 		return bookingId;
@@ -136,10 +130,5 @@ public class BookSlot {
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	
-	
 
-
-
-	
 }

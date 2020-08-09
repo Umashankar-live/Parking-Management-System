@@ -1,6 +1,29 @@
-<form (ngSubmit)="bookSlot()" class="text-center border border-light p-5" #addForm=ngForm > 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-  <label> Location</label>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+        <ul class="sidenav admin-sidenav list-unstyled">
+          <li><a (click)="clickOnBook()">Book a Slot</a></li>
+          <li><a (click)="clickOnBookInfo()">Booking Info</a></li>
+          <li><a (click)="clickOnregister()">View Parking</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+      <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
+
+
+        <form (ngSubmit)="bookSlot(addForm)" class="text-center border border-light p-5" #addForm=ngForm>
+
+          <!-- <label> Location</label>
   <input [(ngModel)]=slot.location name="location"
    placeholder="Enter the Location" class="form-control" #location=ngModel readonly>
    <br><br>
@@ -14,31 +37,36 @@
    <label>Price</label>
   <input [(ngModel)]=slot.price name="price"
    placeholder="Price" class="form-control"  #price=ngModel readonly>
-   <br><br>
-   
-   <label>Enter Date </label>
-  <input [(ngModel)]="book.date" class="form-control" name="date" type="date"
-   placeholder="Enter Date"  #date=ngModel >
-   <br><br>
- 
-   <label>Enter Time</label>
-  <input [(ngModel)]="book.time" class="form-control" name="time" type="time"
-   placeholder="Enter Time"  #time=ngModel >
-   <br><br>
-    
-   <label>Enter Vehicle Number</label>
-  <input [(ngModel)]="book.vehicleNo" class="form-control" name="vehicleNo" type="text"
-   placeholder="Enter Vehicle Number"  #vehicleNo=ngModel >
-   <br><br>
+   <br><br> -->
 
-  
+          <label>Enter Date </label>
+          <input [(ngModel)]="book.date" class="form-control" name="date" type="date" placeholder="Enter Date"
+            #date=ngModel>
+          <br><br>
 
-   <label>Enter Hours for Parking</label>
-  <input [(ngModel)]="book.hour" class="form-control" name="hour" type="number"
-   placeholder="Enter Hours for Parking"  #hour=ngModel >
-   <br><br>
- 
-  
-   <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">Book Bus</button> 
-   </form>
- 
+          <label>Enter Time</label>
+          <input [(ngModel)]="book.time" class="form-control" name="time" type="time" placeholder="Enter Time"
+            #time=ngModel>
+          <br><br>
+
+          <label>Enter Vehicle Number</label>
+          <input [(ngModel)]="book.vehicleNo" class="form-control" name="vehicleNo" type="text"
+            placeholder="Enter Vehicle Number" #vehicleNo=ngModel>
+          <br><br>
+
+
+
+          <label>Enter Hours for Parking</label>
+          <input [(ngModel)]="book.hour" class="form-control" name="hour" type="number"
+            placeholder="Enter Hours for Parking" #hour=ngModel>
+          <br><br>
+
+
+          <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">Book Slot</button>
+        </form>
+
+      </div>
+
+    </div>
+  </div> <!-- /.container-fluid -->
+</body>

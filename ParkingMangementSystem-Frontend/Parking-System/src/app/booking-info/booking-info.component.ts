@@ -12,21 +12,42 @@ import { UserModel } from '../Models/user.model';
   styleUrls: ['./booking-info.component.css']
 })
 export class BookingInfoComponent implements OnInit {
-  slot:Slots;
-  park:Parking;
-  book:BookSlot;
-  user:UserModel;
+  bookingName : String 
+  book : BookSlot[] = []
+  bname: string;
+
+
   constructor(private route:ActivatedRoute,private router:Router,private service: CustomerService) {
-    this.slot= new Slots();
-    this.park=new Parking();
-    this.book= new BookSlot();
-    this.user=new UserModel();
-    this.book.bookingId=parseInt(this.route.snapshot.paramMap.get("bookingId"));
+      
    }
 
   ngOnInit() {
+    this.route.params.subscribe(x=>this.bookingName=x['bname']);
+    console.log(this.bookingName);
+    this.service.getBookingByName(this.bookingName).subscribe(data =>{
+      this.book=data;
+      console.log(this.book);
+    });
  
  }
+
+ clickOnBook(){
+  this.router.navigate(['bookparking']);
+}
+
+clickOnBookInfo(){
+  this.bname= sessionStorage.getItem('userName')
+    this.router.navigate(['bookinginfo',this.bname]);
+  }
+
+clickOnregister(){
+  this.router.navigate(['userlist']);
+}
+
+logout(){
+  sessionStorage.clear();
+  this.router.navigate(['login']);
+}
 
 
  

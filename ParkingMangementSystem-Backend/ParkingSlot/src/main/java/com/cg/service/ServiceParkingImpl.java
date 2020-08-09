@@ -36,7 +36,7 @@ public class ServiceParkingImpl implements ServiceParking {
 			sdao.save(slots);
 		}
 
-		for (int b = 1; b <= parking.getFourWheelerAvailable(); b++) {
+		for (int b = 1; b <= parking.getFourWheelerTotal(); b++) {
 			Slots slots = new Slots();
 			slots.setLocation(parking.getLocation());
 			slots.setSlots(b);
@@ -45,7 +45,7 @@ public class ServiceParkingImpl implements ServiceParking {
 			slots.setPrice(10);
 			sdao.save(slots);
 		}
-        
+
 		Parking park = new Parking();
 		park.setFourWheelerAvailable(parking.getFourWheelerTotal());
 		park.setTwoWheelerAvailable(parking.getTwoWheelerTotal());
@@ -112,7 +112,7 @@ public class ServiceParkingImpl implements ServiceParking {
 		List<Slots> list = findSlotsByLocation(location);
 		List<Slots> newList = new ArrayList<Slots>();
 		for (Slots slots : list) {
-			if (type == slots.getType()) {
+			if ((slots.getType() == type) && (slots.isStatus() == true)) {
 				newList.add(slots);
 			}
 

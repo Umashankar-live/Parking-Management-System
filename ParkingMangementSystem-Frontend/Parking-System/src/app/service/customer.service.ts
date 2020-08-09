@@ -4,12 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import { Search } from '../Models/search.model';
 import { Slots } from '../Models/slots.model';
 import { BookSlot } from '../Models/bookslot.model';
+import { Console } from 'console';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
+  userName : String ;
   
   constructor(private http : HttpClient) { }
 
@@ -23,13 +25,13 @@ export class CustomerService {
 
   bookSlot(slot:Slots,book:BookSlot){
 
-    return this.http.post<BookSlot[]>("http://localhost:8039/booking/add/"+slot.slotId,book);
+    return this.http.post<BookSlot>("http://localhost:8039/booking/add/"+slot.slotId,book);
 
   }
 
 
-  getBookingByBookingId(bookingId:number){
-    return this.http.get<BookSlot[]>("http://localhost:8035/booking/getbyId/"+bookingId);
+  getBookingByName(bookingName: String){
+    return this.http.get<BookSlot[]>("http://localhost:8039/booking/getbyName/"+bookingName);
     
   }
 }
