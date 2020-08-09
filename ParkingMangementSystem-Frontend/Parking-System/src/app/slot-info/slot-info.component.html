@@ -1,7 +1,5 @@
 <form (ngSubmit)="bookSlot()" class="text-center border border-light p-5" #addForm=ngForm > 
 
-
-
   <label> Location</label>
   <input [(ngModel)]=slot.location name="location"
    placeholder="Enter the Location" class="form-control" #location=ngModel readonly>
@@ -19,12 +17,12 @@
    <br><br>
    
    <label>Enter Date </label>
-  <input [(ngModel)]="book.date" class="form-control" name="date" type="text"
+  <input [(ngModel)]="book.date" class="form-control" name="date" type="date"
    placeholder="Enter Date"  #date=ngModel >
    <br><br>
  
    <label>Enter Time</label>
-  <input [(ngModel)]="book.time" class="form-control" name="time" type="text"
+  <input [(ngModel)]="book.time" class="form-control" name="time" type="time"
    placeholder="Enter Time"  #time=ngModel >
    <br><br>
     

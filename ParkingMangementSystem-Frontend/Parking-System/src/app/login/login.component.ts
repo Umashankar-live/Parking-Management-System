@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
 
     //localStorage.setItem('user',this.employee.employeeId);
     sessionStorage.setItem('user', this.User.userId);
+    sessionStorage.setItem('username', this.User.userName);
+
     console.log(user.role);
 
     if (user.role == "admin") {

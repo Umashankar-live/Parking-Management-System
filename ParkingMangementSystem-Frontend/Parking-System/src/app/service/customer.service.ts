@@ -21,13 +21,15 @@ export class CustomerService {
     return this.http.get<Slots[]>("http://localhost:8035/parking/all/location/"+slot.location+"/"+slot.type);
   }
 
-  bookSlot(slot:Slots,book:BookSlot,){
+  bookSlot(slot:Slots,book:BookSlot){
 
-    return this.http.post("http://localhost:8039/booking/add/"+slot.slotId,book);
+    return this.http.post<BookSlot[]>("http://localhost:8039/booking/add/"+slot.slotId,book);
 
   }
 
 
-
-
+  getBookingByBookingId(bookingId:number){
+    return this.http.get<BookSlot[]>("http://localhost:8035/booking/getbyId/"+bookingId);
+    
+  }
 }

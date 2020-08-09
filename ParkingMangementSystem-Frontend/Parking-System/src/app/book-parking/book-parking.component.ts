@@ -27,8 +27,8 @@ export class BookParkingComponent implements OnInit {
   
     }
 
-    bookSlot(slot:Slots){
-     this.route.navigate(['/slot',slot]);
+    bookSlot(slots:Slots){
+     this.route.navigate(['/slot',slots]);
     }
   
   

@@ -19,4 +19,5 @@ public interface ServiceBooking {
 
 	List<BookSlot> getBookingByUsername(String username);
 
+
 }

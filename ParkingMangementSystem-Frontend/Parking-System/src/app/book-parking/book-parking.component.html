@@ -26,7 +26,7 @@
         <thead>
           <tr>
             <th>Location</th>
-            <th>Seats</th>
+            <th>Type</th>
             <th>Price</th>
           </tr>
         </thead>
@@ -35,7 +35,7 @@
             <td> {{s.location}} </td>
             <td> {{s.type}} </td>
             <td>{{s.price}}</td>             
-          <td> <button class="btn btn-primary" (click)=bookSlot(s)>Book</button> </td>        
+          <td> <button class="btn btn-primary" (click)=bookSlot(s,price,s.location,s.type)>Book</button> </td>        
             </tr>
         
           </tbody>
