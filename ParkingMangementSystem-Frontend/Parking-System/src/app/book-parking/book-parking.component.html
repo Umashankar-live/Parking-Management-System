@@ -31,11 +31,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let s of slots">
+          <tr *ngFor="let s of slotList">
             <td> {{s.location}} </td>
             <td> {{s.type}} </td>
             <td>{{s.price}}</td>             
+<<<<<<< HEAD
           <td> <button class="btn btn-primary" (click)=bookSlot(s,price,s.location,s.type)>Book</button> </td>        
+=======
+          <td> <button class="btn btn-primary" (click)=bookSlot(s.slotId,s.location,s.type,s.price)>Book</button> </td>        
+>>>>>>> eb4815c49078682076a9d9766d5326c7a8d6350c
             </tr>
         
           </tbody>

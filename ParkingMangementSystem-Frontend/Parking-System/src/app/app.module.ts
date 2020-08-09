@@ -28,7 +28,7 @@ const routes : Routes = [
   {path:'list-booking',component:BookParkingComponent},
   {path:'customer/bookparking',component:BookParkingComponent},
   {path:'customer/userlist',component:UserListComponent},
-  {path:'slot',component:SlotInfoComponent},
+  {path:'slot/:sid/:loc/:typ/:pri',component:SlotInfoComponent},
   {path:'bookinginfo',component:BookingInfoComponent},
   {path:'add-parking',component:AddParkingComponent},
   {path:'list-parking',component:ListParkingComponent},
