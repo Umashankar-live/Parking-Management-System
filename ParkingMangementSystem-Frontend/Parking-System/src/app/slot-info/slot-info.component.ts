@@ -45,7 +45,7 @@ export class SlotInfoComponent implements OnInit {
     this.book.type=this.slot.type;
     this.book.slotNo=this.slot.slotId;
     this.book.totalPrice=this.book.hour*this.slot.price;
-    this.service.bookSlot(this.slot,this.book).subscribe(x=>alert("Booked Successfully"));
+    this.service.bookSlot(this.slot,this.book).subscribe(x=>alert("Booked Successfully"),response=>{this.book=response;});
     alert(this.book.bookingId)
     this.router.navigate(['/bookinginfo',this.book]);
     

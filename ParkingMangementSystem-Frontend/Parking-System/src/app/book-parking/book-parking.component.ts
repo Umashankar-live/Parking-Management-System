@@ -12,7 +12,7 @@ import { Slots } from '../Models/slots.model';
 export class BookParkingComponent implements OnInit {
   slot:Slots
   parking : Parking[]=[] ;
-  slotList:Slots[]=[];
+  slots:Slots[]=[];
   constructor(private service : CustomerService, private route : Router) { }
 
   ngOnInit() {
@@ -23,18 +23,15 @@ export class BookParkingComponent implements OnInit {
 
   searchSlot(){
    
-    this.service.findSlot(this.slot).subscribe(response=>
-      {this.slotList=response;})
+    this.service.findSlot(this.slot).subscribe(response=>{this.slots=response;})
   
     }
 
-<<<<<<< HEAD
+
     bookSlot(slots:Slots){
      this.route.navigate(['/slot',slots]);
-=======
-    bookSlot(sid:number ,loc : String ,typ : number ,pri : number){
-     this.route.navigate(['/slot',sid,loc,typ,pri]);
->>>>>>> eb4815c49078682076a9d9766d5326c7a8d6350c
+    // bookSlot(sid:number ,loc : String ,typ : number ,pri : number){
+    //  this.route.navigate(['/slot',sid,loc,typ,pri]);
     }
   
   
