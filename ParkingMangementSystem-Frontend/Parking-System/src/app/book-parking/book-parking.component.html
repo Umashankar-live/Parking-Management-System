@@ -23,9 +23,8 @@
 
         <form (ngSubmit)="searchSlot()" class="text-center border border-light p-5" #addForm=ngForm>
 
-          <p class="h4 mb-4">Search</p>
+          <p class="h5 mb-4" style="float: left;"><i class="fa fa-search"></i>Search</p>
 
-          <label style="float:left;"><b>Enter the Location:</b></label>
           <select  [(ngModel)]="slot.location" name="Name" class="form-control" #location=ngModel>
             <option value="null" disabled >Select location</option>
             <option value="Shivajinagar">Shivajinagar</option>
@@ -66,7 +65,7 @@
           <br><br> -->
           <br><br><br><br>
           <br>
-          <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">SEARCH</button>
+          <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid"><i class="fa fa-search"></i>SEARCH</button>
           <br><br>
 
           <a href="/customer" class="btn btn-outline-info" role="button" aria-disabled="true">Back To Menu</a>

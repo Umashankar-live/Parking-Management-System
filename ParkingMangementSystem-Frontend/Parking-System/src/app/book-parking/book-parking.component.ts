@@ -22,23 +22,18 @@ export class BookParkingComponent implements OnInit {
 
   ngOnInit() {
     this.slot = new Slots();
+    this.slot.location = null ;
     
   }
 
 
   searchSlot(){
-<<<<<<< HEAD
    
     this.service.findSlot(this.slot).subscribe(response=>
       {console.log(response)
         this.slotList=response;
       })
-=======
 
-    this.service.findSlot(this.slot).subscribe(response=>{this.slotList=response;})
-    
->>>>>>> 98caf907eadcea6290392d5d9ac119a20fc4acbd
-  
     }
 
 // <<<<<<< HEAD
