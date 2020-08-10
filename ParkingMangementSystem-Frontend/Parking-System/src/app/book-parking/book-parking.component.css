@@ -4,6 +4,12 @@
 body {
     font-family: 'Raleway:300', sans-serif
 }
+
+input[type=radio] {
+    border: 0px;
+    width: 2.5%;
+    height: 2em;
+}
     
 .admin-sidenav {
     width: auto;
