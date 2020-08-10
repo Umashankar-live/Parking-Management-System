@@ -14,7 +14,6 @@ export class BookParkingComponent implements OnInit {
   parking : Parking[]=[] ;
 
   slotList:Slots[]=[];
-
   
   bname: String;
 
@@ -28,24 +27,10 @@ export class BookParkingComponent implements OnInit {
 
 
   searchSlot(){
-   
-    this.service.findSlot(this.slot).subscribe(response=>
-      {console.log(response)
-        this.slotList=response;
-      })
+    this.route.navigate(['/list-slot',this.slot.location,this.slot.type]);
 
     }
 
-// <<<<<<< HEAD
-
-//     bookSlot(slots:Slots){
-//      this.route.navigate(['/slot',slots]);
-//     // bookSlot(sid:number ,loc : String ,typ : number ,pri : number){
-//     //  this.route.navigate(['/slot',sid,loc,typ,pri]);
-// =======
-    bookSlot(slots:Slots){
-     this.route.navigate(['/slot',slots]);
-    }
 
     clickOnBook(){
       this.route.navigate(['list-booking']);

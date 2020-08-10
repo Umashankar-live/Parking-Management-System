@@ -55,8 +55,8 @@ public class ParkingController {
 	}
 
 	@DeleteMapping("/all/delete/{id}")
-	public void deleteParking(@PathVariable("id") int slotId) {
-		 service.delete(slotId);
+	public void deleteParking(@PathVariable("id") int srno) {
+		 service.delete(srno);
 	}
 
 	@GetMapping("/all/location/{location}")

@@ -17,6 +17,11 @@ export class AuthService {
  public get isloggedin() : boolean {
    return this.loggedInStatus ; 
  }
+
+ isUserLoggedIn() {
+  let user = sessionStorage.getItem('userName')
+  return !(user === null)
+}
  
 
 }

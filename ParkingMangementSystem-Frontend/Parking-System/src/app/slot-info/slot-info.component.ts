@@ -64,9 +64,10 @@ export class SlotInfoComponent implements OnInit {
     this.service.bookSlot(this.slot, this.book).subscribe(x => {
       console.log(this.book);
       alert("Booked Successfully")
+      this.router.navigate(['/bookinginfo',this.bname]);
       
     });
-    this.router.navigate(['/bookinginfo',this.bname]);
+    
 
   }
 

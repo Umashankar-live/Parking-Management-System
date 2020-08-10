@@ -31,7 +31,6 @@ export class ListParkingComponent implements OnInit {
     if (ans) {
       this.service.deleteParking(index).subscribe(response => {
         this.reloadData();
-        console.log(this.parkingList);
       });
     }
   }

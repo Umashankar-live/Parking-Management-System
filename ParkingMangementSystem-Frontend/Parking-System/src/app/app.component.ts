@@ -21,10 +21,11 @@ export class AppComponent {
 
   ngOnInit() {
     
+    
   }
 
   logout(){
-    localStorage.clear();
+    sessionStorage.clear();
     this.route.navigate(['login']);
   }
 

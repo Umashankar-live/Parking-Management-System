@@ -26,6 +26,8 @@ export class AdminService {
   fetchAllBooking() {
     return this.http.get<BookSlot[]>("http://localhost:8039/booking/get");
   }
+
+  
   deleteBooking(index: number) {
     return this.http.delete("http://localhost:8039/booking/delete/"+index);
   }

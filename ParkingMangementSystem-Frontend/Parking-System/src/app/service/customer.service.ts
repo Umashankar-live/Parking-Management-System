@@ -11,7 +11,7 @@ import { BookSlot } from '../Models/bookslot.model';
   providedIn: 'root'
 })
 export class CustomerService {
-  userName : String ;
+
   
   constructor(private http : HttpClient) { }
 
@@ -19,8 +19,8 @@ export class CustomerService {
     return this.http.get<Parking[]>("http://localhost:8035/parking/getAll");
   }
 
-  findSlot(slot:Slots){
-    return this.http.get<Slots[]>("http://192.168.2.206:8035/parking/all/location/"+slot.location+"/"+slot.type);
+  findSlot(location : String ,type : Number){
+    return this.http.get<Slots[]>("http://localhost:8035/parking/all/location/"+location+"/"+type);
   }
 
   bookSlot(slot:Slots,book:BookSlot){

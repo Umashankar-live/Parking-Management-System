@@ -79,9 +79,9 @@ public class ServiceParkingImpl implements ServiceParking {
 	}
 
 	@Override
-	public String delete(int slotId) {
-		dao.deleteById(slotId);
-		return "Parking Slot Removed Succesfully of slotId" + slotId;
+	public String delete(int srno) {
+		dao.deleteById(srno);
+		return "Parking Slot Removed Succesfully of slotId" + srno;
 	}
 
 	@Override
@@ -117,7 +117,12 @@ public class ServiceParkingImpl implements ServiceParking {
 			}
 
 		}
-		return newList;
+
+		if (newList.size() != 0)
+			return newList;
+
+		else
+			return null;
 
 	}
 }

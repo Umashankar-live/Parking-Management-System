@@ -20,7 +20,7 @@ export class UserService {
 
 
   fetchAllParking(){
-    return this.http.get<Parking[]>("http://192.168.2.206:8035/parking/getAll");
+    return this.http.get<Parking[]>("http://localhost:8035/parking/getAll");
   }
 
 

@@ -18,6 +18,7 @@ import { AddParkingComponent } from './add-parking/add-parking.component';
 import { ListParkingComponent } from './list-parking/list-parking.component';
 import { ListBookingComponent } from './list-booking/list-booking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListSlotComponent } from './list-slot/list-slot.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -39,6 +40,7 @@ const routes : Routes = [
   {path:'add-parking',component:AddParkingComponent},
   {path:'list-parking',component:ListParkingComponent},
   {path:'bookinglist',component:ListBookingComponent},
+  {path:'list-slot/:loc/:typ',component:ListSlotComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
 ];
@@ -56,7 +58,8 @@ const routes : Routes = [
     SlotInfoComponent,
     AddParkingComponent,
     ListParkingComponent,
-    ListBookingComponent
+    ListBookingComponent,
+    ListSlotComponent
   ],
   imports: [
     BrowserModule,

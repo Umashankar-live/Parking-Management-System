@@ -17,7 +17,7 @@ eureka:
 
 spring:
   application:
-    name: employee-microservice
+    name: user-microservice
 
  
 

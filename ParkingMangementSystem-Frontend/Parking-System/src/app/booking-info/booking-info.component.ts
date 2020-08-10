@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
-import { Slots } from '../Models/slots.model';
-import { Parking } from '../Models/parking.model';
 import { BookSlot } from '../Models/bookslot.model';
-import { UserModel } from '../Models/user.model';
+
 
 @Component({
   selector: 'app-booking-info',
@@ -31,7 +29,7 @@ export class BookingInfoComponent implements OnInit {
  
  }
 
- clickOnBook(){
+clickOnBook(){
   this.router.navigate(['bookparking']);
 }
 

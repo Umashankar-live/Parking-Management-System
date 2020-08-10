@@ -47,8 +47,8 @@ public class BookingController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public String deleteBookSlot(@PathVariable("id") Integer bookingId) {
-		return service.delete(bookingId);
+	public void deleteBookSlot(@PathVariable("id") Integer bookingId) {
+		 service.delete(bookingId);
 	}
 
 	@GetMapping("/location/{location}")

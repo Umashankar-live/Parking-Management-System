@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Slot Id</th>
+        <th>Location</th>
+        <th>Type</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of slotList">
+        <td>{{s.slotId}}</td>
+        <td> {{s.location}} </td>
+        <td> {{s.type}} </td>
+        <td>{{s.price}}</td>
+        <td> <button class="btn btn-primary" (click)=bookSlot(s)>Book</button> </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

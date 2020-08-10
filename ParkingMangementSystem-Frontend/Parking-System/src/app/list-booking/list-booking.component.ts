@@ -30,7 +30,7 @@ export class ListBookingComponent implements OnInit {
     if (ans) {
       this.service.deleteBooking(index).subscribe(response => {
         this.reloadData();
-        console.log(this.bookingList);
+        
       });
     }
   }
