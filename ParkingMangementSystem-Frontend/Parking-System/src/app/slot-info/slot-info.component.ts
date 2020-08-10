@@ -39,6 +39,19 @@ export class SlotInfoComponent implements OnInit {
     
   }
 
+// <<<<<<< HEAD
+//   bookSlot(){
+//     this.book.userName=sessionStorage.getItem('userName');
+//     this.book.totalPrice=0;
+//     this.book.location=this.slot.location;
+//     this.book.type=this.slot.type;
+//     this.book.slotNo=this.slot.slotId;
+//     this.book.totalPrice=this.book.hour*this.slot.price;
+//     this.service.bookSlot(this.slot,this.book).subscribe(x=>alert("Booked Successfully"),response=>{this.book=response;});
+//     alert(this.book.bookingId)
+//     this.router.navigate(['/bookinginfo',this.book]);
+    
+// =======
   bookSlot(form: NgForm) {
     console.log(sessionStorage.getItem('userName'))
     this.book.userName = sessionStorage.getItem('userName');
@@ -72,6 +85,7 @@ export class SlotInfoComponent implements OnInit {
   logout(){
     sessionStorage.clear();
     this.router.navigate(['login']);
+
   }
 
 
