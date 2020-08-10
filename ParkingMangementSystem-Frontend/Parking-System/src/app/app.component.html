@@ -8,13 +8,13 @@
     <h1>{{ title }} </h1>
   </div>
 </div>
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-icon-top navbar-expand navbar-dark bg-dark">
   
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item hover">
-        <a class="nav-link" href="#" class="nav-link" [routerLink]="['login']">
+        <a class="nav-link" *ngIf="!this.service.isloggedin" href="#" class="nav-link" [routerLink]="['login']">
           <i class="fa fa-home"></i>
           Home
           <span class="sr-only">(current)</span>
@@ -23,7 +23,7 @@
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item hover">
-          <a class="nav-link" href="#" class="nav-link" [routerLink]="['register']">
+          <a class="nav-link" *ngIf="!this.service.isloggedin" href="#" class="nav-link" [routerLink]="['register']">
             <i class="fa fa-registered" aria-hidden="true">
               <span class="sr-only">(current)</span>
             </i>

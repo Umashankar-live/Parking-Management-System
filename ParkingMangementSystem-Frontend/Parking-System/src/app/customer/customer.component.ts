@@ -10,6 +10,7 @@ bname : String ;
   constructor(private route : Router) { }
 
   ngOnInit() {
+    this.bname= sessionStorage.getItem('userName')
   }
 
   clickOnBook(){
@@ -17,7 +18,6 @@ bname : String ;
   }
 
   clickOnBookInfo(){
-  this.bname= sessionStorage.getItem('userName')
     this.route.navigate(['bookinginfo',this.bname]);
   }
 

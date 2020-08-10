@@ -25,7 +25,9 @@ export class BookParkingComponent implements OnInit {
   searchSlot(){
    
     this.service.findSlot(this.slot).subscribe(response=>
-      {this.slotList=response;})
+      {console.log(response)
+        this.slotList=response;
+      })
   
     }
 
