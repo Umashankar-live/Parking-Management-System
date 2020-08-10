@@ -24,16 +24,33 @@
         <form (ngSubmit)="searchSlot()" class="text-center border border-light p-5" #addForm=ngForm>
 
           <p class="h4 mb-4">Search</p>
+           <input [(ngModel)]="slot.location" type="text" name="Name" placeholder="Enter the Location"
+            class="form-control" #location=ngModel>
+          <br><br>
+          
+          <label>Please Select the Vehicle Type:</label>
+          <div>
+          <input [(ngModel)]="slot.type" type="radio" name="Type"
+          class="form-control" #type=ngModel value="2">
 
-
-          <input [(ngModel)]="slot.location" type="text" name="Name" placeholder="Enter the Location"
+           <img src="assets\twoWheeler.jpg" alt="Two Wheeler" style="height: 100px;width: 120px" >
+          
+           <input [(ngModel)]="slot.type" type="radio" name="Type"
+           class="form-control" #type=ngModel value="4">
+            
+            <img src="assets\fourWheeler.jpg" alt="four Wheeler" style="height: 100px;width: 120px"   >
+          </div>
+           
+          <!-- <input [(ngModel)]="slot.location" type="text" name="Name" placeholder="Enter the Location"
             class="form-control" #location=ngModel>
           <br><br>
 
 
           <input [(ngModel)]="slot.type" type="text" name="Type" placeholder="Type of vehicle" class="form-control"
             #type=ngModel>
-          <br><br>
+          <br><br> -->
+            <br>
+            <br>
 
           <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">SEARCH</button>
           <br><br>

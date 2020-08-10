@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import { Search } from '../Models/search.model';
 import { Slots } from '../Models/slots.model';
 import { BookSlot } from '../Models/bookslot.model';
-import { Console } from 'console';
+
 
 
 @Injectable({
@@ -20,7 +20,7 @@ export class CustomerService {
   }
 
   findSlot(slot:Slots){
-    return this.http.get<Slots[]>("http://localhost:8035/parking/all/location/"+slot.location+"/"+slot.type);
+    return this.http.get<Slots[]>("http://192.168.2.206:8035/parking/all/location/"+slot.location+"/"+slot.type);
   }
 
   bookSlot(slot:Slots,book:BookSlot){

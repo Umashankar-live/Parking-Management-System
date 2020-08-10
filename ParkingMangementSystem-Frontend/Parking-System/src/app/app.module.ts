@@ -25,7 +25,7 @@ const routes : Routes = [
   {path:'customer',component:CustomerComponent},
   {path:'register',component:RegisterComponent},
   {path:'list-parking',component:ListParkingComponent},
-//   {path:'list-booking',component:BookParkingComponent},
+   {path:'list-booking',component:BookParkingComponent},
 // <<<<<<< HEAD
 //   {path:'customer/bookparking',component:BookParkingComponent},
 //   {path:'customer/userlist',component:UserListComponent},

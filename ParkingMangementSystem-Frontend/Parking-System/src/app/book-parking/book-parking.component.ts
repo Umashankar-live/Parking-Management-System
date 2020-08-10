@@ -13,7 +13,7 @@ export class BookParkingComponent implements OnInit {
   slot:Slots
   parking : Parking[]=[] ;
 
-  slots:Slots[]=[];
+  slotList:Slots[]=[];
 
   
   bname: String;
@@ -27,8 +27,9 @@ export class BookParkingComponent implements OnInit {
 
 
   searchSlot(){
-   
-    this.service.findSlot(this.slot).subscribe(response=>{this.slots=response;})
+
+    this.service.findSlot(this.slot).subscribe(response=>{this.slotList=response;})
+    
   
     }
 
