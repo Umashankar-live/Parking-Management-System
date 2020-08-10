@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  parking:Parking[];
+  parking:Parking[]=[];
   constructor(private service:UserService,private route:Router) { }
 
   ngOnInit() {
@@ -18,7 +18,24 @@ export class UserListComponent implements OnInit {
   }
  
   viewParking(park:Parking){
-    this.route.navigate(['/customer/bookparking',park]);
+    this.route.navigate(['bookparking',park]);
    }
+
+   clickOnBook(){
+    this.route.navigate(['bookparking']);
+  }
+
+  clickOnBookInfo(){
+    this.route.navigate(['bookinginfo']);
+  }
+
+  clickOnregister(){
+    this.route.navigate(['userlist']);
+  }
+
+  logout(){
+    sessionStorage.clear();
+    this.route.navigate(['login']);
+  }
 
 }

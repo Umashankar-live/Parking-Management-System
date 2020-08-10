@@ -20,20 +20,20 @@ import com.cg.service.ServiceBooking;
 @CrossOrigin("http://localhost:4200")
 @RequestMapping("/booking")
 public class BookingController {
-	
+
 	@Autowired
-	ServiceBooking service ;
-	
+	ServiceBooking service;
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
 	@PostMapping("/add/{slotId}")
-	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot , @PathVariable("slotId") int slotId) {
-		
-		String status = restTemplate.getForObject("http://localhost:8035/parking/updateStatus/"+slotId,String.class);
+	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot, @PathVariable("slotId") int slotId) {
+
+		String status = restTemplate.getForObject("http://localhost:8035/parking/updateStatus/" + slotId, String.class);
 		System.out.println(status);
 		return service.addSlot(BookSlot);
-		
+
 	}
 
 	@GetMapping("/get")
@@ -41,16 +41,11 @@ public class BookingController {
 		return service.fetchAll();
 	}
 
-	
-	@GetMapping("/getbyId/{bookingId}")
-	public BookSlot getBookingById(@PathVariable int bookingId) {
-		return service.getBookingById(bookingId);
+	@GetMapping("/getbyName/{uname}")
+	public List<BookSlot> getBookingByName(@PathVariable("uname") String userName) {
+		return service.getBookingByUsername(userName);
 	}
-	
-	
-	
 
-	
 	@DeleteMapping("/delete/{id}")
 	public String deleteBookSlot(@PathVariable("id") Integer bookingId) {
 		return service.delete(bookingId);
@@ -60,15 +55,11 @@ public class BookingController {
 	public List<BookSlot> findByLocation(@PathVariable("location") String location) {
 		return service.findByLocation(location);
 	}
-	
+
 	@GetMapping("/getBookingByUserId/{username}")
-	public List<BookSlot> getBookingByUserId(@PathVariable("username") String userName){
+	public List<BookSlot> getBookingByUserId(@PathVariable("username") String userName) {
 		System.out.println("inBookingUserId");
 		return service.getBookingByUsername(userName);
 	}
-	
-	
-	
-	
 
 }
