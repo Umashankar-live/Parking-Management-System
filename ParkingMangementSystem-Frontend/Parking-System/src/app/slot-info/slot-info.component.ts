@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Slots } from '../Models/slots.model';
 import { Parking } from '../Models/parking.model';
 import { BookSlot } from '../Models/bookslot.model';
-import { UserModel } from '../Models/user.model';
+import { UserModel } from '../Models/customer.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { NgForm } from '@angular/forms';

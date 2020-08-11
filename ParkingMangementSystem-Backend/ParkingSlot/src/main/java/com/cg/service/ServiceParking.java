@@ -22,10 +22,16 @@ public interface ServiceParking {
 	List<Slots> findByLocationAndType(String location, int type);
 
 	
-	String updateStatus (int slotId);
+	String bookedStatus (int slotId);
 
 	
 	Slots getSlotById (int slotId);
+	
+	Parking getParkingById(int srno) ;
+
+	void deleteAllSlots(String location);
+
+	String cancelStatus(int slotId);
 
 
 }

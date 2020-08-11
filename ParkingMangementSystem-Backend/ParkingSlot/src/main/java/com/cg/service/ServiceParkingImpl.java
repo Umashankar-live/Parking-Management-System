@@ -96,9 +96,9 @@ public class ServiceParkingImpl implements ServiceParking {
 	}
 
 	@Override
-	public String updateStatus(int slotId) {
+	public String bookedStatus(int slotId) {
 
-		sdao.update(slotId);
+		sdao.booked(slotId);
 		return "Status Updated for the slots";
 
 	}
@@ -118,11 +118,25 @@ public class ServiceParkingImpl implements ServiceParking {
 
 		}
 
-		if (newList.size() != 0)
-			return newList;
+		return newList;
+		
 
-		else
-			return null;
+	}
 
+	@Override
+	public Parking getParkingById(int srno) {
+		return dao.findById(srno).get();
+	}
+
+	@Override
+	public void deleteAllSlots(String location) {
+		sdao.deleteBylocation(location);
+
+	}
+
+	@Override
+	public String cancelStatus(int slotId) {
+		sdao.cancel(slotId);
+		return "Status Updated for the slots";
 	}
 }
