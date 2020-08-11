@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { AdminService } from '../service/admin.service';
 import { BookSlot } from '../Models/bookslot.model';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class BookingInfoComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,
-    private adminService: AdminService) {
+    private adminService: AdminService, private authService : AuthService) {
 
   }
 
@@ -40,7 +41,7 @@ export class BookingInfoComponent implements OnInit {
 
 
   remove(index: number) {
-    var ans = confirm("Are you sure you want to delete?");
+    var ans = confirm("Are you sure you want to cancel?");
     if (ans) {
       this.adminService.deleteBooking(index).subscribe(response => {
         this.reloadData();
@@ -66,6 +67,7 @@ export class BookingInfoComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.router.navigate(['login']);
   }
 

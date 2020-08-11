@@ -6,6 +6,7 @@ import { UserModel } from '../Models/customer.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class SlotInfoComponent implements OnInit {
   book: BookSlot;
   user: UserModel;
   bname : String ;
-  constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService) {
+  constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
 
     this.slot = new Slots();
     this.park = new Parking();
@@ -85,6 +86,7 @@ export class SlotInfoComponent implements OnInit {
 
   logout(){
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.router.navigate(['login']);
 
   }
