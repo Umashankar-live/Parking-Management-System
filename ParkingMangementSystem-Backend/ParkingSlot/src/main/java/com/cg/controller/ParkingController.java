@@ -36,10 +36,16 @@ public class ParkingController {
 		return service.fetchAll();
 	}
 
-	@GetMapping("/updateStatus/{id}")
-	public String updateStatus(@PathVariable("id") int slotId) {
+	@GetMapping("/bookedStatus/{id}")
+	public String bookedStatus(@PathVariable("id") int slotId) {
        
-		return service.updateStatus(slotId);	
+		return service.bookedStatus(slotId);	
+	}
+	
+	@GetMapping("/cancelStatus/{id}")
+	public String cancelStatus(@PathVariable("id") int slotId) {
+       
+		return service.cancelStatus(slotId);	
 	}
 	
 	@GetMapping("/getSlotById/{id}")
@@ -56,6 +62,8 @@ public class ParkingController {
 
 	@DeleteMapping("/all/delete/{id}")
 	public void deleteParking(@PathVariable("id") int srno) {
+		 Parking park = service.getParkingById(srno);
+		 service.deleteAllSlots(park.getLocation());
 		 service.delete(srno);
 	}
 

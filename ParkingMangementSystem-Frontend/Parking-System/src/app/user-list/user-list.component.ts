@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Parking } from "../Models/parking.model";
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -12,7 +13,7 @@ export class UserListComponent implements OnInit {
   bname : String ;
   park : Parking
 
-  constructor(private service:UserService,private route:Router) { }
+  constructor(private service:UserService,private route:Router,private authService : AuthService) { }
 
   ngOnInit() {
     setTimeout( ()=>{this.service.fetchAllParking().subscribe(response=>{
@@ -39,6 +40,7 @@ export class UserListComponent implements OnInit {
   
   logout(){
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.route.navigate(['login']);
   }
   

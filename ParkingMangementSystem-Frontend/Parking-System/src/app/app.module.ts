@@ -20,27 +20,22 @@ import { ListBookingComponent } from './list-booking/list-booking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListSlotComponent } from './list-slot/list-slot.component';
 
+
 const routes : Routes = [
   {path:'login', component:LoginComponent},
-  {path:'admin' , component:AdminComponent},
-  {path:'customer',component:CustomerComponent},
+  {path:'admin' , component:AdminComponent,canActivate: [AuthGuard]},
+  {path:'customer',component:CustomerComponent,canActivate: [AuthGuard]},
   {path:'register',component:RegisterComponent},
-  {path:'list-parking',component:ListParkingComponent},
-   {path:'list-booking',component:BookParkingComponent},
-// <<<<<<< HEAD
-//   {path:'customer/bookparking',component:BookParkingComponent},
-//   {path:'customer/userlist',component:UserListComponent},
-//   {path:'slot',component:SlotInfoComponent},
-//   {path:'bookinginfo',component:BookingInfoComponent},
-// =======
-  {path:'bookparking',component:BookParkingComponent},
-  {path:'userlist',component:UserListComponent},
-  {path:'slot',component:SlotInfoComponent},
-  {path:'bookinginfo/:bname',component:BookingInfoComponent},
-  {path:'add-parking',component:AddParkingComponent},
-  {path:'list-parking',component:ListParkingComponent},
-  {path:'bookinglist',component:ListBookingComponent},
-  {path:'list-slot/:loc/:typ',component:ListSlotComponent},
+  {path:'list-parking',component:ListParkingComponent,canActivate: [AuthGuard]},
+  {path:'list-booking',component:BookParkingComponent,canActivate: [AuthGuard]},
+  {path:'bookparking',component:BookParkingComponent,canActivate: [AuthGuard]},
+  {path:'userlist',component:UserListComponent,canActivate: [AuthGuard]},
+  {path:'slot',component:SlotInfoComponent,canActivate: [AuthGuard]},
+  {path:'bookinginfo/:bname',component:BookingInfoComponent,canActivate: [AuthGuard]},
+  {path:'add-parking',component:AddParkingComponent,canActivate: [AuthGuard]},
+  {path:'list-parking',component:ListParkingComponent,canActivate: [AuthGuard]},
+  {path:'bookinglist',component:ListBookingComponent,canActivate: [AuthGuard]},
+  {path:'list-slot/:loc/:typ',component:ListSlotComponent,canActivate: [AuthGuard]},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
 ];

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Slots } from '../Models/slots.model';
 import { Parking } from '../Models/parking.model';
 import { BookSlot } from '../Models/bookslot.model';
-import { UserModel } from '../Models/user.model';
+import { UserModel } from '../Models/customer.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { NgForm } from '@angular/forms';
 import { getLocaleDateFormat } from '@angular/common';
+import { AuthService } from '../service/auth.service';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -23,6 +25,8 @@ export class SlotInfoComponent implements OnInit {
 
   myDate = new Date();
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService) {
+  
+  constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
 
     this.slot = new Slots();
     this.park = new Parking();
@@ -39,29 +43,11 @@ export class SlotInfoComponent implements OnInit {
 
   ngOnInit() {
 
-   
-//     var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-// document.write(utc);
-
     
   }
 
-  
 
 
-// <<<<<<< HEAD
-//   bookSlot(){
-//     this.book.userName=sessionStorage.getItem('userName');
-//     this.book.totalPrice=0;
-//     this.book.location=this.slot.location;
-//     this.book.type=this.slot.type;
-//     this.book.slotNo=this.slot.slotId;
-//     this.book.totalPrice=this.book.hour*this.slot.price;
-//     this.service.bookSlot(this.slot,this.book).subscribe(x=>alert("Booked Successfully"),response=>{this.book=response;});
-//     alert(this.book.bookingId)
-//     this.router.navigate(['/bookinginfo',this.book]);
-    
-// =======
   bookSlot(form: NgForm) {
     console.log(sessionStorage.getItem('userName'))
     this.book.userName = sessionStorage.getItem('userName');
@@ -95,6 +81,7 @@ export class SlotInfoComponent implements OnInit {
 
   logout(){
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.router.navigate(['login']);
 
   }

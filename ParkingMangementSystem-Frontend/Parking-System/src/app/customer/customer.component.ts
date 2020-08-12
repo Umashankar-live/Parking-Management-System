@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthService} from '../service/auth.service'
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -7,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class CustomerComponent implements OnInit {
 bname : String ;
-  constructor(private route : Router) { }
+  constructor(private route : Router,private authService : AuthService) { }
 
   ngOnInit() {
     this.bname= sessionStorage.getItem('userName')
@@ -27,6 +28,7 @@ bname : String ;
 
   logout(){
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.route.navigate(['login']);
   }
 

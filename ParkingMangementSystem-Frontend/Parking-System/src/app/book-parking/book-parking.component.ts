@@ -3,6 +3,7 @@ import { Parking } from "../Models/parking.model";
 import {CustomerService} from '../service/customer.service';
 import {Router} from '@angular/router';
 import { Slots } from '../Models/slots.model';
+import {AuthService} from '../service/auth.service'
 
 @Component({
   selector: 'app-book-parking',
@@ -17,7 +18,7 @@ export class BookParkingComponent implements OnInit {
   
   bname: String;
 
-  constructor(private service : CustomerService, private route : Router) { }
+  constructor(private service : CustomerService, private route : Router,private authService : AuthService) { }
 
   ngOnInit() {
     this.slot = new Slots();
@@ -47,6 +48,7 @@ export class BookParkingComponent implements OnInit {
   
     logout(){
       sessionStorage.clear();
+      this.authService.setLoggedIn(false);
       this.route.navigate(['login']);
 
     }

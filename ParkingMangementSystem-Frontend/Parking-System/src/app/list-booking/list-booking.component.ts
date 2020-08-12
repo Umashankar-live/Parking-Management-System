@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookSlot } from '../Models/bookslot.model';
 import { AdminService } from '../service/admin.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-list-booking',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class ListBookingComponent implements OnInit {
   bookingList: BookSlot[] = [];
 
-  constructor(private service: AdminService, private route: Router) { }
+  constructor(private service: AdminService, private route: Router,private authService : AuthService) { }
 
   ngOnInit() {
     setTimeout(() => { this.reloadData() }, 100);
@@ -49,6 +50,7 @@ export class ListBookingComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.route.navigate(['login']);
   }
 

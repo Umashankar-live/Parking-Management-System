@@ -14,6 +14,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  /* Methods for the Admin Portal */
   clickOnAddParking(){
     this.route.navigate(['add-parking']);
   }
@@ -28,6 +30,7 @@ export class AdminComponent implements OnInit {
 
   logout(){
     sessionStorage.clear();
+    this.authService.setLoggedIn(false);
     this.route.navigate(['login']);
     
   }

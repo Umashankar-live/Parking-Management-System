@@ -18,10 +18,18 @@ public interface SlotDao extends JpaRepository<Slots, Integer> {
 	@Modifying
 	@Transactional
 	@Query("update Slots s set s.status = false where s.slotId = ?1")
-	void update(int slotId );
+	void booked(int slotId );
 
 	@Query("Select p from Slots p Where p.location=?1")
 	List<Slots> findSlotsByLocation(String location);
+
+	@Transactional
+	void deleteBylocation(String location);
+
+	@Modifying
+	@Transactional
+	@Query("update Slots s set s.status = true where s.slotId = ?1")
+	void cancel(int slotId);
 
 
 }
