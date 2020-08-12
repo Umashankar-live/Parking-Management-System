@@ -14,6 +14,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  /* Methods for the Admin Portal */
   clickOnAddParking(){
     this.route.navigate(['add-parking']);
   }

@@ -3,6 +3,8 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
+<!-- Admin Portal -->
 <head>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" />
 </head>
@@ -19,44 +21,47 @@
         </ul>
       </div>
 
-      <!-- Enter the code here -->
-      
-        <form (ngSubmit)="saveParking(); addParkingForm.reset()" #addParkingForm=ngForm>
-          <div>
-            <table class="table table-hover">
-              <tr>
-                <td><label> Location </label></td>
-                <td>
-                  <select name="role" [(ngModel)]="parking.location" #location=ngModel>
-                    <option value="null" disabled>Select location</option>
-                    <option value="Shivajinagar">Shivajinagar</option>
-                    <option value="Hadapsar">Hadapsar</option>
-                    <option value="Nanapeth">Nanapeth</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td><label>Two Wheeler Slots</label></td>
-                <td>
-                  <input type="number" name="twowheeler" class="form-control" [(ngModel)]=parking.twoWheelerTotal
-                    placeholder="Enter Here" required min="1" max="500" #twowheel=ngModel>
-                </td>
-              </tr>
-              <tr>
-                <td><label>Four Wheeler Slots</label></td>
-                <td>
-                  <input type="number" name="Fourwheeler" class="form-control" [(ngModel)]=parking.fourWheelerTotal
-                    placeholder="Enter Here" required min="1" max="500" #fourwheel=ngModel>
-                </td>
-              </tr>
 
-            </table>
-          </div>
-          <div>
-            <button class="btn btn-primary" type="submit" [disabled]="!addParkingForm.valid">Add Parking</button>
-          </div>
-        </form>
-     
+
+
+      <!-- Parking Form -->
+
+      <form (ngSubmit)="saveParking(); addParkingForm.reset()" #addParkingForm=ngForm>
+        <div>
+          <table class="table table-hover">
+            <tr>
+              <td><label> Location </label></td>
+              <td>
+                <select name="role" [(ngModel)]="parking.location" #location=ngModel>
+                  <option value="null" disabled>Select location</option>
+                  <option value="Shivajinagar">Shivajinagar</option>
+                  <option value="Hadapsar">Hadapsar</option>
+                  <option value="Nanapeth">Nanapeth</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Two Wheeler Slots</label></td>
+              <td>
+                <input type="number" name="twowheeler" class="form-control" [(ngModel)]=parking.twoWheelerTotal
+                  placeholder="Enter Here" required min="1" max="500" #twowheel=ngModel>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Four Wheeler Slots</label></td>
+              <td>
+                <input type="number" name="Fourwheeler" class="form-control" [(ngModel)]=parking.fourWheelerTotal
+                  placeholder="Enter Here" required min="1" max="500" #fourwheel=ngModel>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit" [disabled]="!addParkingForm.valid">Add Parking</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </body>

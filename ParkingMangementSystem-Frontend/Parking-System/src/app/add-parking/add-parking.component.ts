@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Parking } from "../Models/parking.model";
 import { AdminService } from '../service/admin.service';
-import {AuthService} from '../service/auth.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-add-parking',
@@ -11,24 +11,26 @@ import {AuthService} from '../service/auth.service';
 })
 export class AddParkingComponent implements OnInit {
   parking: Parking;
-  constructor(private route: Router, private service: AdminService, private auth : AuthService) { }
+  constructor(private route: Router, private service: AdminService, private auth: AuthService) { }
 
   ngOnInit() {
     this.parking = new Parking();
-    this.parking.location = null ;
-    
+    this.parking.location = null;
+
   }
 
+  /* Function for saving the parking form */
   saveParking() {
-    
     console.log(this.parking);
     this.service.addParking(this.parking).subscribe(response => {
-      
+
       this.route.navigate(['list-parking']);
     })
 
   }
 
+
+  /* Option for the Admin Menu */
   clickOnAddParking() {
     this.route.navigate(['add-parking']);
   }

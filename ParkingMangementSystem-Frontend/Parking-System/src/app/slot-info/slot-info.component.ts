@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class SlotInfoComponent implements OnInit {
   book: BookSlot;
   user: UserModel;
   bname : String ;
+  
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
 
     this.slot = new Slots();
@@ -37,22 +39,11 @@ export class SlotInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+   
     
   }
 
-// <<<<<<< HEAD
-//   bookSlot(){
-//     this.book.userName=sessionStorage.getItem('userName');
-//     this.book.totalPrice=0;
-//     this.book.location=this.slot.location;
-//     this.book.type=this.slot.type;
-//     this.book.slotNo=this.slot.slotId;
-//     this.book.totalPrice=this.book.hour*this.slot.price;
-//     this.service.bookSlot(this.slot,this.book).subscribe(x=>alert("Booked Successfully"),response=>{this.book=response;});
-//     alert(this.book.bookingId)
-//     this.router.navigate(['/bookinginfo',this.book]);
-    
-// =======
+
   bookSlot(form: NgForm) {
     console.log(sessionStorage.getItem('userName'))
     this.book.userName = sessionStorage.getItem('userName');
