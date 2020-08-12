@@ -6,6 +6,7 @@ import { UserModel } from '../Models/user.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { NgForm } from '@angular/forms';
+import { getLocaleDateFormat } from '@angular/common';
 
 
 @Component({
@@ -14,12 +15,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./slot-info.component.css']
 })
 export class SlotInfoComponent implements OnInit {
-
   slot: Slots;
   park: Parking;
   book: BookSlot;
   user: UserModel;
   bname : String ;
+
+  myDate = new Date();
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService) {
 
     this.slot = new Slots();
@@ -31,13 +33,21 @@ export class SlotInfoComponent implements OnInit {
     this.slot.price = parseInt(this.route.snapshot.paramMap.get("price"));
     this.slot.slotId = parseInt(this.route.snapshot.paramMap.get("slotId"));
 
-
+    
 
   }
 
   ngOnInit() {
+
+   
+//     var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+// document.write(utc);
+
     
   }
+
+  
+
 
 // <<<<<<< HEAD
 //   bookSlot(){
@@ -88,6 +98,8 @@ export class SlotInfoComponent implements OnInit {
     this.router.navigate(['login']);
 
   }
+
+  
 
 
 }
