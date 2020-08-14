@@ -62,7 +62,7 @@
 
 
           <label>Enter Hours for Parking</label>
-          <input [(ngModel)]="book.hour" class="form-control" name="hour" type="number"
+          <input [(ngModel)]="book.hour" class="form-control"  min="1" max="24" name="hour" type="number"
             placeholder="Enter Hours for Parking" #hour=ngModel required>
           <br><br>
 

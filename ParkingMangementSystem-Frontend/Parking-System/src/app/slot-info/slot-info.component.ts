@@ -24,7 +24,6 @@ export class SlotInfoComponent implements OnInit {
   bname : String ;
 
   myDate = new Date();
-  constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService) {
   
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
 
