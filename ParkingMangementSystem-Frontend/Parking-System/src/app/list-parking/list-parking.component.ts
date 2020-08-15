@@ -11,9 +11,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class ListParkingComponent implements OnInit {
   parkingList: Parking[] = [];
-  page: number = 1;
+  page:number = 1;
 
-  constructor(private service: AdminService, private route: Router, private authService: AuthService) { }
+  constructor(private service: AdminService, private route: Router,private authService : AuthService) { }
 
   ngOnInit() {
     setTimeout(() => { this.reloadData() }, 100);
