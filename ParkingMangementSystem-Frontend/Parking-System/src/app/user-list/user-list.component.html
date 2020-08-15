@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let park of parking">
+              <tr *ngFor="let park of parking | paginate : { itemsPerPage:5, currentPage:page }">
                 <td> {{park.location}} </td>
                 <td> {{park.twoWheelerAvailable}} </td>
                 <td> {{park.twoWheelerAvailable}} </td>
@@ -40,6 +40,7 @@
               </tr>
             </tbody>
           </table>
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
       </div>
 

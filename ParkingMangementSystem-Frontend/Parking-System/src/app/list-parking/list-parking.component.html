@@ -33,15 +33,15 @@
                     </tr>
                      
                    
-                    <tr *ngFor="let p of parkingList | filter : term | paginate : { itemsPerPage:5, current:page } ">
+                    <tr *ngFor="let p of parkingList | filter : term | paginate : { itemsPerPage:5, currentPage:page } ">
                         <td>{{p.location}}</td>
                         <td>{{p.fourWheelerAvailable}}</td>
                         <td>{{p.twoWheelerAvailable}}</td>
                         <td><button class="btn btn-danger" (click)="remove(p.srno)">Delete</button></td>
                     </tr>
                 </table>
-               <pagination-control (pageChange)="page = $event"></pagination-control>
-
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+               
             </div>
         </div>
     </div> <!-- /.container-fluid -->

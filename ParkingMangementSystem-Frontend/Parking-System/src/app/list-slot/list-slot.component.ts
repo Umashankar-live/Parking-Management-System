@@ -11,7 +11,8 @@ export class ListSlotComponent implements OnInit {
 location : String ;
 type : number ;
 slotList : Slots[] = [];
-slots : Slots
+slots : Slots ;
+page: number = 1;
 
   constructor(private route:ActivatedRoute,private router:Router,private service: CustomerService) { }
 

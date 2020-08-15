@@ -49,3 +49,11 @@ input[type=radio] {
 .admin-sidenav li:active {
 	border-color: #02d3f5; 
 }
+
+select {
+	width: 100%;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	background-color: hsla(208, 85%, 87%, 0.904);
+  }

@@ -11,7 +11,8 @@ import { AuthService } from '../service/auth.service';
 export class UserListComponent implements OnInit {
   parking:Parking[]=[];
   bname : String ;
-  park : Parking
+  park : Parking ;
+  page: number = 1;
 
   constructor(private service:UserService,private route:Router,private authService : AuthService) { }
 
