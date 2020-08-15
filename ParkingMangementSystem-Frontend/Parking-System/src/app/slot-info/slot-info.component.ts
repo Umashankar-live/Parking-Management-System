@@ -24,7 +24,10 @@ export class SlotInfoComponent implements OnInit {
   bname : String ;
 
   myDate = new Date();
+<<<<<<< HEAD
  
+=======
+>>>>>>> 65819e495326051b320b69773bbfaeef9cfe3133
   
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
 

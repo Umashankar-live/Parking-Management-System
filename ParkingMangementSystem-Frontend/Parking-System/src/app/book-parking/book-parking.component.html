@@ -23,16 +23,20 @@
         
         <!-- Book Parking Form -->
         <div class="container pt-3 ">
-          <form (ngSubmit)="searchSlot()" class="text-center border border-light p-5" #addForm=ngForm>
+          <form (ngSubmit)="searchSlot()" class="text-center border border-light p-5"  #addForm=ngForm>
 
             <p class="h5 mb-4" style="float: left;"><i class="fa fa-search"></i>Search</p>
 
             <select [(ngModel)]="slot.location" name="Name" class="form-control" #location=ngModel>
-              <option value="null" disabled>Select location</option>
+              <option value="null" disabled>Where are you going?</option>
               <option value="Shivajinagar">Shivajinagar</option>
               <option value="Hadapsar">Hadapsar</option>
               <option value="Nanapeth">Nanapeth</option>
             </select>
+
+            
+
+
             <br><br>
             <label style="float:left;"><b>Please Select the Vehicle Type:</b></label>
             <br>
@@ -41,11 +45,11 @@
             <input [(ngModel)]="slot.type" id="two" type="radio" name="Type" class="form-control" #type=ngModel
               value="2" style="float:left;">
 
-            <img src="assets\twoWheeler.jpg" alt="Two Wheeler" height="150" width="180" style="float: left;">
+            <img src="assets\twoWheeler.jpg" alt="Two Wheeler" height="150" width="180" style="float: left;" />
 
             <input [(ngModel)]="slot.type" type="radio" name="Type" class="form-control" #type=ngModel value="4">
 
-            <img src="assets\fourWheeler.jpg" alt="four Wheeler" height="150" width="180" style="float:left">
+            <img src="assets\fourWheeler.jpg" alt="four Wheeler" height="150" width="180" style="float:left" />
 
             <br>
             <br>
