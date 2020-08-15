@@ -16,18 +16,16 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User addUser(User e) {
-		User User = eDao.save(e);
-		return User;
+		return eDao.save(e);
 	}
 
 	@Override
-	public boolean deleteUser(int userId) {
+	public void deleteUser(int userId) {
 		eDao.deleteById(userId);
-		return true;
+		
 	}
 
 	
-
 	@Override
 	public List<User> getAllCustomer() {
 		

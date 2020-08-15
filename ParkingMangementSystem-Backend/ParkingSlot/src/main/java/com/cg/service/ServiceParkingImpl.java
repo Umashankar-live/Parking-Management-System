@@ -46,13 +46,8 @@ public class ServiceParkingImpl implements ServiceParking {
 			sdao.save(slots);
 		}
 
-		Parking park = new Parking();
-		park.setFourWheelerAvailable(parking.getFourWheelerTotal());
-		park.setTwoWheelerAvailable(parking.getTwoWheelerTotal());
-		park.setFourWheelerTotal(parking.getFourWheelerTotal());
-		park.setTwoWheelerTotal(parking.getTwoWheelerTotal());
-		park.setLocation(parking.getLocation());
-		return dao.save(park);
+
+		return dao.save(parking);
 
 	}
 

@@ -21,6 +21,8 @@ export class AddParkingComponent implements OnInit {
 
   /* Function for saving the parking form */
   saveParking() {
+    this.parking.fourWheelerAvailable = this.parking.fourWheelerTotal ;
+    this.parking.twoWheelerAvailable = this.parking.twoWheelerTotal ;
     console.log(this.parking);
     this.service.addParking(this.parking).subscribe(response => {
 

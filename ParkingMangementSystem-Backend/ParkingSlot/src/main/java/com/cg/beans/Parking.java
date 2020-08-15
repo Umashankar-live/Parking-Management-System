@@ -89,6 +89,18 @@ public class Parking {
 	public void setFourWheelerAvailable(int fourWheelerAvailable) {
 		this.fourWheelerAvailable = fourWheelerAvailable;
 	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Parking [srno=" + srno + ", location=" + location + ", twoWheelerTotal=" + twoWheelerTotal
+				+ ", twoWheelerAvailable=" + twoWheelerAvailable + ", fourWheelerTotal=" + fourWheelerTotal
+				+ ", fourWheelerAvailable=" + fourWheelerAvailable + "]";
+	}
+	
+	
+	
 	
 	
 	
