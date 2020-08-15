@@ -35,7 +35,7 @@
               <tr *ngFor="let park of parking | paginate : { itemsPerPage:4, currentPage:page }">
                 <td> {{park.location}} </td>
                 <td> {{park.twoWheelerAvailable}} </td>
-                <td> {{park.twoWheelerAvailable}} </td>
+                <td> {{park.fourWheelerAvailable}} </td>
                 <td> <button class="btn btn-primary" (click)=viewParking(park)>Book Slot</button> </td>
               </tr>
             </tbody>

@@ -32,6 +32,8 @@ public interface ServiceParking {
 	void deleteAllSlots(String location);
 
 	String cancelStatus(int slotId);
+	
+	Parking findParking(String location);
 
 
 }

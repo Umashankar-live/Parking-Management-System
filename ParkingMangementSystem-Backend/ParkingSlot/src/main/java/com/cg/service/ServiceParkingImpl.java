@@ -22,6 +22,8 @@ public class ServiceParkingImpl implements ServiceParking {
 
 	@Autowired
 	public Slots slots;
+	
+	
 
 	@Override
 	public Parking addSlot(Parking parking) {
@@ -92,7 +94,6 @@ public class ServiceParkingImpl implements ServiceParking {
 
 	@Override
 	public String bookedStatus(int slotId) {
-
 		sdao.booked(slotId);
 		return "Status Updated for the slots";
 
@@ -133,5 +134,11 @@ public class ServiceParkingImpl implements ServiceParking {
 	public String cancelStatus(int slotId) {
 		sdao.cancel(slotId);
 		return "Status Updated for the slots";
+	}
+
+	@Override
+	public Parking findParking(String location) {
+		return dao.findParking(location);
+		
 	}
 }

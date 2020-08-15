@@ -32,6 +32,7 @@ public class BookingController {
 
 		String statusFalse = restTemplate.getForObject("http://localhost:8035/parking/bookedStatus/" + slotId, String.class);
 		System.out.println(statusFalse);
+		
 		return service.addSlot(BookSlot);
 
 	}

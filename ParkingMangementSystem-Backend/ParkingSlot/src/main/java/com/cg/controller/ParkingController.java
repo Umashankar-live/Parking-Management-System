@@ -38,13 +38,28 @@ public class ParkingController {
 
 	@GetMapping("/bookedStatus/{id}")
 	public String bookedStatus(@PathVariable("id") int slotId) {
-       
+		//updating the available status
+		Slots slot = service.getSlotById(slotId);
+		Parking park = service.findParking(slot.getLocation());
+		if (slot.getType() == 4)
+			park.setFourWheelerAvailable(park.getFourWheelerTotal()-1);
+		else
+			park.setTwoWheelerAvailable(park.getTwoWheelerTotal()-1);	
+		
 		return service.bookedStatus(slotId);	
 	}
 	
 	@GetMapping("/cancelStatus/{id}")
 	public String cancelStatus(@PathVariable("id") int slotId) {
-       
+		//updating the available status
+		Slots slot = service.getSlotById(slotId);
+		Parking park = service.findParking(slot.getLocation());
+		if (slot.getType() == 4)
+		  park.setFourWheelerAvailable(park.getFourWheelerAvailable()+1);
+		else
+		  park.setTwoWheelerAvailable(park.getTwoWheelerAvailable()+1);	
+		
+		
 		return service.cancelStatus(slotId);	
 	}
 	
@@ -77,6 +92,10 @@ public class ParkingController {
 	public List<Slots> findByLocationAndType(@PathVariable("location") String location,@PathVariable int type) {
 		return service.findByLocationAndType(location,type);
 	}
+	
+	
+	
+	
 	
 
 }

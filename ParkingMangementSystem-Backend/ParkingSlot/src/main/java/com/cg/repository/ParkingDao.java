@@ -14,4 +14,8 @@ public interface ParkingDao extends JpaRepository<Parking, Integer> {
 	@Query("Select p from Parking p Where p.location=?1")
 	List<Parking> findByLocation(String location);
 
+	
+	@Query("Select p from Parking p Where p.location=?1")
+	Parking findParking(String location);
+
 }
