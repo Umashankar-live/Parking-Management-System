@@ -39,7 +39,7 @@
            
           </tr>
 
-          <tr *ngFor="let b of bookingList | filter : term | paginate : { itemsPerPage:5, currentPage:page } ">
+          <tr *ngFor="let b of bookingList | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
             <td>{{b.userName}}</td>
             <td>{{b.vehicleNo}}</td>
             <td>{{b.date | date | uppercase}}</td>

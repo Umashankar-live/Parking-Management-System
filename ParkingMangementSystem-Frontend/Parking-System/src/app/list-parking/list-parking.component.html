@@ -33,7 +33,7 @@
                     </tr>
                      
                    
-                    <tr *ngFor="let p of parkingList | filter : term | paginate : { itemsPerPage:5, currentPage:page } ">
+                    <tr *ngFor="let p of parkingList | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
                         <td>{{p.location}}</td>
                         <td>{{p.fourWheelerAvailable}}</td>
                         <td>{{p.twoWheelerAvailable}}</td>
