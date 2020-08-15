@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let s of slotList">
+      <tr *ngFor="let s of slotList | paginate : { itemsPerPage:5, currentPage:page }">
         <td>{{s.slotId}}</td>
         <td> {{s.location}} </td>
         <td> {{s.type}} </td>
@@ -20,4 +20,5 @@
 
     </tbody>
   </table>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

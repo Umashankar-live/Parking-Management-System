@@ -38,7 +38,7 @@
               <th>Action</th>
 
             </tr>
-            <tr *ngFor="let b of book | filter : term ">
+            <tr *ngFor="let b of book | filter : term | paginate : { itemsPerPage:5, currentPage:page } ">
               <td>{{b.userName}}</td>
               <td>{{b.vehicleNo}}</td>
               <td>{{b.date | date | uppercase}}</td>
@@ -51,6 +51,7 @@
 
             </tr>
           </table>
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
 
         <form class="text-center" (ngSubmit)="back()">
