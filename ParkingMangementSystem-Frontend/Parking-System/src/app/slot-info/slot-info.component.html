@@ -21,59 +21,34 @@
       <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
 
       {{myDate | date}}
-
+<div class="container pt-3 ">
         <form (ngSubmit)="bookSlot(addForm)" class="text-center border border-light p-5" #addForm=ngForm>
-
-          <!-- <label> Location</label>
-  <input [(ngModel)]=slot.location name="location"
-   placeholder="Enter the Location" class="form-control" #location=ngModel readonly>
-   <br><br>
-  
-   <label> Type</label>
-  <input [(ngModel)]=slot.type name="type"
-   placeholder="Enter the Type"  class="form-control" #destination=ngModel readonly> 
-   <br><br>
-
-   
-   <label>Price</label>
-  <input [(ngModel)]=slot.price name="price"
-   placeholder="Price" class="form-control"  #price=ngModel readonly>
-   <br><br> -->
-           
 
           <label>Enter Date </label>
 
           <input [(ngModel)]="book.date" class="form-control"  name="date" 
             type="date" placeholder="Enter Date"   #date=ngModel required>
-          
 
-          <br><br>
-
+            <br>
           <label>Enter Time</label>
           <input [(ngModel)]="book.time" class="form-control" name="time" type="time" placeholder="Enter Time"
             #time=ngModel required>
-          <br><br>
 
-          <label>Enter Vehicle Number</label>
+
+            <br>
+          <label>Vehicle Number</label>
           <input [(ngModel)]="book.vehicleNo" class="form-control" name="vehicleNo" type="text"
             placeholder="Enter Vehicle Number" #vehicleNo=ngModel required>
-          <br><br>
 
-
-
-          <label>Enter Hours for Parking</label>
-<<<<<<< HEAD
-          <input [(ngModel)]="book.hour" min="1" max="24" class="form-control" name="hour" type="number"
-=======
+            <br>
+          <label>Hours for Parking</label>
           <input [(ngModel)]="book.hour" class="form-control"  min="1" max="24" name="hour" type="number"
->>>>>>> 65819e495326051b320b69773bbfaeef9cfe3133
             placeholder="Enter Hours for Parking" #hour=ngModel required>
-          <br><br>
-
-
+      
+            <br>
           <button class="btn btn-outline-info" type="submit" [disabled]="!addForm.valid">Book Slot</button>
         </form>
-
+</div>
       </div>
 
     </div>

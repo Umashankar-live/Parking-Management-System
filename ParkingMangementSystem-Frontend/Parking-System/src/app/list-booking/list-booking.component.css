@@ -53,4 +53,18 @@ body {
 .custab:hover{
     box-shadow: 3px 3px 0px transparent;
     transition: 0.5s;
-    }
+	}
+
+.search{
+		
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		background-color: white;
+		background-image: url("https://img.icons8.com/android/26/000000/google-web-search.png");
+		background-position: right top; 
+		background-repeat: no-repeat;
+		
+		
+	  }

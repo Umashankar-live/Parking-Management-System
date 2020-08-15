@@ -11,6 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class AddParkingComponent implements OnInit {
   parking: Parking;
+  
   constructor(private route: Router, private service: AdminService, private auth: AuthService) { }
 
   ngOnInit() {

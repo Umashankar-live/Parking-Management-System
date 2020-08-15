@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import {Ng2SearchPipeModule} from 'ng2-search-filter'; // used for search using filter pipe in frontend 
+import {NgxPaginationModule} from 'ngx-pagination'; // used for pagination
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -61,7 +63,9 @@ const routes : Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
 
     
   ],

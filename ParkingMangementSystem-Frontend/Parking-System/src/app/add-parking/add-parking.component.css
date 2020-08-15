@@ -48,3 +48,11 @@ table.center {
     margin-right:auto;
   }
 
+  select {
+	width: 100%;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	background-color: hsla(208, 85%, 87%, 0.904);
+  }
+
