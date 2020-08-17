@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.user.role = 'customer' ;
+    this.user.gender=null;
   }
 
   saveUser(){

@@ -27,16 +27,29 @@ public class User {
 	@Column(name="Role")
 	private String role;
 	
+	@Column(name="Email_Id")
+	private String email;
+	
+	@Column(name="Phone_No")
+	private String phoneNo;
+	
+	@Column(name="Gender")
+	private String gender;
+	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Integer userId, String userName, String password, String role) {
+	public User(Integer userId, String userName, String password, String role, String email, String phoneNo,
+			String gender) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
 		this.role = role;
+		this.email = email;
+		this.phoneNo = phoneNo;
+		this.gender = gender;
 	}
 
 	public Integer getUserId() {
@@ -70,6 +83,31 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	
 	
 }

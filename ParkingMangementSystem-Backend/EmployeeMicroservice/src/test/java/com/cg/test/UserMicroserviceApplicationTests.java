@@ -38,8 +38,8 @@ public class UserMicroserviceApplicationTests {
 	
 	@Test
 	public void getAllcustomertest() {
-		when(repository.findAll()).thenReturn(Stream.of(new User(1, "Umashankar", "12345", "admin"), 
-				new User(2,"Rupa","12345", "admin")).collect(Collectors.toList()));
+		when(repository.findAll()).thenReturn(Stream.of(new User(1, "Umashankar", "12345", "admin","uma123@gmail.com","7098709889","Male"), 
+				new User(2,"Rupa","12345", "admin","rupa12@gmail.com","9876545678","Female")).collect(Collectors.toList()));
 		assertEquals(2, service.getallUser().size());
 	}
 
@@ -54,7 +54,7 @@ public class UserMicroserviceApplicationTests {
 	
 	@Test
 	public void saveUserTest() {
-		User User = new User(1, "Shekhar", "12345", "admin");
+		User User = new User(1, "Shekhar", "12345", "admin","Shekar2@gmail.com","9878987654","Male");
 		when(repository.save(User)).thenReturn(User);
 		assertEquals(User, service.addUser(User));
 	}
@@ -63,7 +63,7 @@ public class UserMicroserviceApplicationTests {
 
 	@Test
 	public void deleteUserTest() {
-		User User = new User(1,"Shivani","12345","admin");
+		User User = new User(1,"Shivani","12345","admin","shivani32@gmail.com","7897897896","Female");
 		service.deleteUser(1);
 		verify(repository, times(1)).deleteById(User.getUserId());
 	}
