@@ -40,5 +40,6 @@ body {
 }
 
 .admin-sidenav li:active {
+	
 	border-color: #02d3f5; 
 }

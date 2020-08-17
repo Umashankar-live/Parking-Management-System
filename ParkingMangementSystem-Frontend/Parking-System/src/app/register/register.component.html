@@ -11,15 +11,43 @@
   
       <!-- registration Form -->
       <form (ngSubmit) = "saveUser(); addUserForm.reset()" #addUserForm=ngForm>
+        
         <input type="text" [(ngModel)]="user.userName" id="name" class="fadeIn second" name="username" placeholder="Register Your Username" required pattern="([A-z0-9À-ž\s]){2,}" #username = ngModel>
         <div *ngIf="username.dirty && username.touched && username.invalid" class="alert alert-danger">
           Username is invalid
         </div>
+
         <input type="password" name="pass"  [(ngModel)]="user.password" id="password" class="fadeIn third"  placeholder="Register Your Password"  required
         pattern="[A-Za-z0-9]{4,}" #password=ngModel>
         <div *ngIf="password.dirty && password.touched && password.invalid" class="alert alert-danger">
           Password is invalid
       </div>
+
+      <input type="email" name="email"  [(ngModel)]="user.email" id="email" class="fadeIn third"  placeholder="Enter Valid Email-Id"  required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email=ngModel>
+        <div *ngIf="email.dirty && email.touched && email.invalid" class="alert alert-danger">
+          Email-Id is Invalid
+      </div>
+
+      <input type="text" name="phoneNo"  [(ngModel)]="user.phoneNo" id="phoneNo" class="fadeIn third"  placeholder="Enter 10 digit Mobile Number"  required
+        pattern="[789][0-9]{9}" #phoneNo=ngModel>
+        <div *ngIf="phoneNo.dirty && phoneNo.touched && phoneNo.invalid" class="alert alert-danger">
+          Phone No is invalid.
+      </div>
+
+      <select [(ngModel)]="user.gender" name="gender" class="fadeIn third" #gender=ngModel  required>
+        <option value="null" disabled>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        </select>
+        <div *ngIf="gender.dirty && gender.touched && gender.invalid" class="alert alert-danger">
+          Please Select appropriate Value
+      </div>
+
+
+
+
         <input type="submit"  class="fadeIn fourth" value="Register" [disabled]="!addUserForm.valid">
       </form>
   
