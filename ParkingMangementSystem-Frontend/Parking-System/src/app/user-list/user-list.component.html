@@ -25,6 +25,7 @@
            
             <thead>
               <h2>List Of Parking Available :</h2>
+              <input type="text" class="search" placeholder="Search" [(ngModel)]="term">
               <tr>
                 <th>Location</th>
                 <th>Two Wheeler Slots </th>
@@ -32,7 +33,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let park of parking | paginate : { itemsPerPage:4, currentPage:page }">
+              <tr *ngFor="let park of parking  | filter : term | paginate : { itemsPerPage:4, currentPage:page }">
                 <td> {{park.location}} </td>
                 <td> {{park.twoWheelerAvailable}} </td>
                 <td> {{park.fourWheelerAvailable}} </td>
