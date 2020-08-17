@@ -12,11 +12,11 @@ import com.cg.dao.UserDao;
 public class LoginServiceImpl implements LoginService {
 	
 	@Autowired
-	private UserDao eDao;
+	private UserDao userDao;
 
 	@Override
 	public User validate(Login login) {
-		List<User> allUsers = eDao.findAll();
+		List<User> allUsers = userDao.findAll();
 		for (int i = 0; i < allUsers.size(); i++) {
 			if(allUsers.get(i).getUserName().equalsIgnoreCase(login.getName()) && 
 					allUsers.get(i).getPassword().equalsIgnoreCase(login.getPassword())) {

@@ -7,7 +7,7 @@ import { AuthService } from '../service/auth.service';
 
 
 @Component({
-  selector: 'app-booking-info',
+  selector: 'app-booking-info', // used for accessing the component
   templateUrl: './booking-info.component.html',
   styleUrls: ['./booking-info.component.css']
 })

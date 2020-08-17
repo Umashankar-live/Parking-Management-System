@@ -24,9 +24,9 @@
         <form class="form-horizontal" (ngSubmit)="bookSlot(addForm)" #addForm=ngForm>
 
           <div class="form-group">
-            <label class="control-label col-sm-2" for="bdate">Enter Date </label>
+            <label class="control-label col-sm-2"  for="bdate">Enter Date </label>
             <div class="col-sm-10">
-              <input id="bdate" [(ngModel)]="book.date" class="form-control" name="date" type="date"
+              <input id="bdate" [(ngModel)]="book.date" min="2020-08-17"  class="form-control" name="date" type="date"
                 placeholder="Enter Date" #date=ngModel required>
             </div>
           </div>

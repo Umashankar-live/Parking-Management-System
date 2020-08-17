@@ -37,7 +37,7 @@
                         <td>{{p.location}}</td>
                         <td>{{p.fourWheelerAvailable}}</td>
                         <td>{{p.twoWheelerAvailable}}</td>
-                        <td><button class="btn btn-danger" (click)="remove(p.srno)">Delete</button></td>
+                        <td><button class="btn btn-danger" (click)="remove(p.srno)"><i class="fa fa-trash"></i></button></td>
                     </tr>
                 </table>
                 <pagination-controls (pageChange)="page = $event"></pagination-controls>

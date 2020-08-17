@@ -8,7 +8,7 @@
       <!-- Tabs Titles -->
   
     
-  
+      
       <!-- registration Form -->
       <form (ngSubmit) = "saveUser(); addUserForm.reset()" #addUserForm=ngForm>
         <input type="text" [(ngModel)]="user.userName" id="name" class="fadeIn second" name="username" placeholder="Register Your Username" required pattern="([A-z0-9À-ž\s]){2,}" #username = ngModel>

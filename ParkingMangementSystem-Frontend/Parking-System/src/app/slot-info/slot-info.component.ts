@@ -12,10 +12,11 @@ import { formatDate } from '@angular/common';
 
 
 @Component({
-  selector: 'app-slot-info',
+  selector: 'app-slot-info', // used for accessing the component
   templateUrl: './slot-info.component.html',
   styleUrls: ['./slot-info.component.css']
 })
+
 export class SlotInfoComponent implements OnInit {
   slot: Slots;
   park: Parking;

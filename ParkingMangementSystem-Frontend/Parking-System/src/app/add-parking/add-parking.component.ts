@@ -5,7 +5,7 @@ import { AdminService } from '../service/admin.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
-  selector: 'app-add-parking',
+  selector: 'app-add-parking', // used for accessing the component
   templateUrl: './add-parking.component.html',
   styleUrls: ['./add-parking.component.css']
 })

@@ -6,7 +6,7 @@ import { UserModel } from '../Models/customer.model';
 import { AuthService } from '../service/auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login', //// used for accessing the component
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

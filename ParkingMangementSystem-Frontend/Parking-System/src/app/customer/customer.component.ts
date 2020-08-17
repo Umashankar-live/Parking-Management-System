@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../service/auth.service'
 @Component({
-  selector: 'app-customer',
+  selector: 'app-customer', // used for accessing the component
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })

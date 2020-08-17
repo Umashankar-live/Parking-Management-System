@@ -48,7 +48,7 @@
             <td>{{b.slotNo}}</td>
             <td>{{b.type}}</td>
             <td>{{b.totalPrice  | currency:'INR'}}</td>
-            <td><button class="btn btn-danger" (click)="remove(b.bookingId)">Delete</button></td>
+            <td><button class="btn btn-danger" (click)="remove(b.bookingId)"><i class="fa fa-trash"></i></button></td>
           </tr>
         </table>
         <pagination-controls (pageChange)="page = $event"></pagination-controls>

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 import { Slots } from '../Models/slots.model';
 @Component({
-  selector: 'app-list-slot',
+  selector: 'app-list-slot', //// used for accessing the component
   templateUrl: './list-slot.component.html',
   styleUrls: ['./list-slot.component.css']
 })

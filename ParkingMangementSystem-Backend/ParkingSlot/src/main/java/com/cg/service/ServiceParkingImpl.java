@@ -20,8 +20,7 @@ public class ServiceParkingImpl implements ServiceParking {
 	@Autowired
 	private SlotDao sdao;
 
-	@Autowired
-	public Slots slots;
+	
 	
 	
 

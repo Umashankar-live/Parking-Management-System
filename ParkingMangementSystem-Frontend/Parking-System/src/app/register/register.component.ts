@@ -5,7 +5,7 @@ import { UserModel } from '../Models/customer.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-register', //// used for accessing the component
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
