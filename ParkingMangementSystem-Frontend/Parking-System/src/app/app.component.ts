@@ -8,7 +8,7 @@ import {AuthService} from '../app/service/auth.service'
   styleUrls: ['./app.component.css'] // contains component-specific stylesheets
 })
 export class AppComponent {
-  title = 'Parking Management System';
+  title = 'Parking Express Pvt Ltd';
   flag:boolean=false;
   
   
