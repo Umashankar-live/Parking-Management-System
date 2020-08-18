@@ -23,8 +23,8 @@ export class SlotInfoComponent implements OnInit {
   book: BookSlot;
   user: UserModel;
   bname : String ;
-
-  myDate = new Date();
+  
+ 
  
   
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {

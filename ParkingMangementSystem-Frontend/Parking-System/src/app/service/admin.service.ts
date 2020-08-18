@@ -6,7 +6,7 @@ import { BookSlot } from '../Models/bookslot.model';
 /* To define a class as a service in Angular, use the @Injectable() decorator to provide the metadata 
 that allows Angular to inject it into a component as a dependency. */
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // it add the service to the root module
 })
 export class AdminService {
   

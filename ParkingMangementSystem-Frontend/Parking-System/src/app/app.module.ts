@@ -12,13 +12,15 @@ of the app. While building the app, the builder looks at this file to find the e
 
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import {Ng2SearchPipeModule} from 'ng2-search-filter'; // used for search using filter pipe in frontend 
 import {NgxPaginationModule} from 'ngx-pagination'; // used for pagination
+
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -34,6 +36,9 @@ import { ListParkingComponent } from './list-parking/list-parking.component';
 import { ListBookingComponent } from './list-booking/list-booking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListSlotComponent } from './list-slot/list-slot.component';
+import { NotFoundComponent } from './notfound/notfound.component'
+import { GlobalErrorHandler } from './service/global-error.service';
+import { ErrorComponent } from './error/error.component';
 
 
 //path for all the component used in the project for routing
@@ -47,6 +52,7 @@ const routes : Routes = [
   {path:'bookparking',component:BookParkingComponent,canActivate: [AuthGuard]},
   {path:'userlist',component:UserListComponent,canActivate: [AuthGuard]},
   {path:'slot',component:SlotInfoComponent,canActivate: [AuthGuard]},
+  {path:'error/:errMsg', component:ErrorComponent},
   {path:'bookinginfo/:bname',component:BookingInfoComponent,canActivate: [AuthGuard]},
   {path:'add-parking',component:AddParkingComponent,canActivate: [AuthGuard]},
   {path:'list-parking',component:ListParkingComponent,canActivate: [AuthGuard]},
@@ -54,6 +60,7 @@ const routes : Routes = [
   {path:'list-slot/:loc/:typ',component:ListSlotComponent,canActivate: [AuthGuard]},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
+  {path:'**',component : NotFoundComponent}
 ];
 
 @NgModule({
@@ -70,7 +77,9 @@ const routes : Routes = [
     AddParkingComponent,
     ListParkingComponent,
     ListBookingComponent,
-    ListSlotComponent
+    ListSlotComponent,
+    ErrorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule, // it is used to the angular app in the browser
@@ -83,7 +92,9 @@ const routes : Routes = [
 
     
   ],
-  providers: [],
+  providers: [
+    {provide:ErrorHandler , useClass : GlobalErrorHandler}
+  ],
   bootstrap: [AppComponent] // AppComponent is getting bootstrapped.
   //This component is defined in app.component.ts file. This file interacts with the webpage and serves data to it
 })
