@@ -6,11 +6,11 @@
 
 <div class="bg-light">
   <div style="text-align: center;">
-    <h1>{{ title }} </h1>
+    <h1 class="serif">{{ title }}</h1>
   </div>
 </div>
 <nav class="navbar navbar-icon-top navbar-expand navbar-dark bg-dark">
- 
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -22,18 +22,17 @@
         </a>
       </li>
     </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item hover">
-          <a class="nav-link" *ngIf="!this.service.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['register']">
-            <i class="fa fa-registered" aria-hidden="true">
-              <span class="sr-only">(current)</span>
-            </i>
-            Register
-          </a>
-        </li>
-      </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item hover">
+        <a class="nav-link" *ngIf="!this.service.isUserLoggedIn()" href="#" class="nav-link"
+          [routerLink]="['register']">
+          <i class="fa fa-registered" aria-hidden="true">
+            <span class="sr-only">(current)</span>
+          </i>
+          Register
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>
 <router-outlet></router-outlet>
-
-

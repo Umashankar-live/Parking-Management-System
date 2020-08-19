@@ -6,7 +6,7 @@ import { Slots } from '../Models/slots.model';
 import {AuthService} from '../service/auth.service'
 
 @Component({
-  selector: 'app-book-parking',
+  selector: 'app-book-parking', // used for accessing the component
   templateUrl: './book-parking.component.html',
   styleUrls: ['./book-parking.component.css']
 })

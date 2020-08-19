@@ -17,5 +17,6 @@ public interface UserService {
 	public List<User> getallUser();
 	public void deleteUser(int userId);
 	public List<User> getAllCustomer();
+	public void sendNotification(User user);
 
 }

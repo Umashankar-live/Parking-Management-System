@@ -5,7 +5,7 @@ import { UserService } from '../service/user.service';
 import { UserModel } from '../Models/customer.model';
 
 @Component({
-  selector: 'app-admin',
+  selector: 'app-admin', // used for accessing the component
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })

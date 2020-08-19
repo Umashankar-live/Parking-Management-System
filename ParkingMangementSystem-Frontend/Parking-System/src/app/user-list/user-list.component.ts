@@ -4,7 +4,7 @@ import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 @Component({
-  selector: 'app-user-list',
+  selector: 'app-user-list', // used for accessing the component
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })

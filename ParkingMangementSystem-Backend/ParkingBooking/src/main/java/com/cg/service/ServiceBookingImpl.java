@@ -13,40 +13,40 @@ import com.cg.dao.BookingDao;
 public class ServiceBookingImpl implements ServiceBooking {
 
 	@Autowired
-	BookingDao bdao;
+	private BookingDao bookingDao;
 
 	@Override
 	public BookSlot addSlot(BookSlot booking) {
-		return bdao.save(booking);
+		return bookingDao.save(booking);
 	}
 
 	@Override
 	public List<BookSlot> fetchAll() {
-		return bdao.findAll();
+		return bookingDao.findAll();
 	}
 
 	@Override
 	public String delete(Integer bookingId) {
-		bdao.deleteById(bookingId);
+		bookingDao.deleteById(bookingId);
 		return "Parking Slot Removed Succesfully of bookId" + bookingId;
 	}
 
 	@Override
 	public List<BookSlot> findByLocation(String location) {
-		return bdao.findByLocation(location);
+		return bookingDao.findByLocation(location);
 	}
 
 	@Override
 	public List<BookSlot> getBookingByUsername(String userName) {
 
-		return bdao.findAll().stream().filter(x -> x.getUserName().equalsIgnoreCase(userName))
+		return bookingDao.findAll().stream().filter(x -> x.getUserName().equalsIgnoreCase(userName))
 				.collect(Collectors.toList());
 	}
 
 	@Override
 	public BookSlot getBookingById(Integer bookingId) {
 
-		return bdao.findById(bookingId).get();
+		return bookingDao.findById(bookingId).get();
 	}
 
 }

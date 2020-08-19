@@ -12,18 +12,19 @@ import { formatDate } from '@angular/common';
 
 
 @Component({
-  selector: 'app-slot-info',
+  selector: 'app-slot-info', // used for accessing the component
   templateUrl: './slot-info.component.html',
   styleUrls: ['./slot-info.component.css']
 })
+
 export class SlotInfoComponent implements OnInit {
   slot: Slots;
   park: Parking;
   book: BookSlot;
   user: UserModel;
   bname : String ;
-
-  myDate = new Date();
+  
+ 
  
   
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,private authService : AuthService) {
