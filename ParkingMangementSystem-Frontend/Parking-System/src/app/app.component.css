@@ -118,7 +118,13 @@
   }
 
  
-  
+  .image{
+         height:45em ;
+         background-size:cover;
+         width:auto;
+         background-image:url('https://wallpaperaccess.com/full/1978931.jpg');
+         background-position:center
+       }
   
   
 }

@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="image">
     <!-- Admin Portal -->
     <div class="container-fluid">
         <div class="row">
@@ -24,9 +24,9 @@
             <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
                 <h1>Welcome Admin!</h1>
                 <br>
-                <table class="table table-hover custab">
-                    <h3>List Of Customer Registered :</h3>
-                    <input type="text" class="search" placeholder="Search" [(ngModel)]="term">
+                <h3>List Of Customer Registered :</h3>
+                <input type="text" class="search" placeholder="Search" [(ngModel)]="term">
+                <table class="table table-hover table-dark">
                     <tr>
                         <th>User Name </th>
                         <th>Email</th>
