@@ -35,11 +35,11 @@
           Phone No is invalid.
       </div>
 
-      <select [(ngModel)]="user.gender" name="gender" class="fadeIn third" #gender=ngModel  required>
-        <option value="null" disabled>Gender</option>
+      <select [(ngModel)]="user.gender" name="gender" class="fadeIn third" #gender=ngModel  >
+        <option value="null" disabled>Enter Your Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
-        <option value="Other">Other</option>
+        <option value="Others">Others</option>
         </select>
         <div *ngIf="gender.dirty && gender.touched && gender.invalid" class="alert alert-danger">
           Please Select appropriate Value
