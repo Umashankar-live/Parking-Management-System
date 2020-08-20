@@ -24,14 +24,14 @@
         Password is invalid
       </div>
 
-      <input type="email" name="email" [(ngModel)]="user.email" id="email" class="fadeIn third"
+      <input type="email" name="email" [(ngModel)]="user.email" id="email" class="fadeIn fourth"
         placeholder="Enter Valid Email-Id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email=ngModel>
       <div *ngIf="email.dirty && email.touched && email.invalid" class="alert alert-danger">
         Email-Id is Invalid
       </div>
 
       <input type="text" name="phoneNo" [(ngModel)]="user.phoneNo" id="phoneNo" class="fadeIn third"
-        placeholder="Enter 10 digit Mobile Number" required pattern="[789][0-9]{9}" #phoneNo=ngModel>
+          placeholder="Enter 10 digit Mobile Number" required pattern="[789][0-9]{9}" #phoneNo=ngModel>
       <div *ngIf="phoneNo.dirty && phoneNo.touched && phoneNo.invalid" class="alert alert-danger">
         Phone No is invalid.
       </div>
@@ -62,7 +62,22 @@
       <input type="submit" class="fadeIn fourth" value="Register" [disabled]="!addUserForm.valid">
     </form>
 
+         <div class="fadeIn sixth">
+          Select Gender:<br>
+          <input type="radio" [(ngModel)]="user.gender" name="gender" class="fadeIn sixth" #gender=ngModel
+            value="Male">Male
+          <input type="radio" [(ngModel)]="user.gender" name="gender" class="fadeIn sixth" #gender=ngModel
+            value="Female">Female
+          <input type="radio" [(ngModel)]="user.gender" name="gender" class="fadeIn sixth" #gender=ngModel
+            value="Others">Others
 
+        </div>
+        <div *ngIf="gender.dirty && gender.touched && gender.invalid" class="alert alert-danger">
+          Please Select appropriate Value
+        </div>
+         
+        <input type="submit" class="fadeIn sixth" value="Register" [disabled]="!addUserForm.valid">
+    </form>
 
   </div>
 </div>
