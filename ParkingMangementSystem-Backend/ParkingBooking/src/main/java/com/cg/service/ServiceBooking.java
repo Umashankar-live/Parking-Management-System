@@ -18,4 +18,6 @@ public interface ServiceBooking {
 
 	List<BookSlot> getBookingByUsername(String userName);
 
+	void generateBill(BookSlot booking);
+
 }
