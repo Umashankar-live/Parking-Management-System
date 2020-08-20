@@ -16,7 +16,7 @@ export class BookingInfoComponent implements OnInit {
   book: BookSlot[] = []
   bname: string;
   page: number = 1;
-
+ 
 
   constructor(private route: ActivatedRoute, private router: Router, private service: CustomerService,
     private adminService: AdminService, private authService : AuthService) {

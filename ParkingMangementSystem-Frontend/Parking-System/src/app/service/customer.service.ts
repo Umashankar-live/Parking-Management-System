@@ -34,4 +34,6 @@ export class CustomerService {
     return this.http.get<BookSlot[]>("http://localhost:8039/booking/getbyName/"+bookingName);
     
   }
+
+ 
 }

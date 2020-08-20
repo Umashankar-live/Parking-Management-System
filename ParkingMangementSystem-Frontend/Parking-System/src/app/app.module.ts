@@ -39,7 +39,7 @@ import { ListSlotComponent } from './list-slot/list-slot.component';
 import { NotFoundComponent } from './notfound/notfound.component'
 import { GlobalErrorHandler } from './service/global-error.service';
 import { ErrorComponent } from './error/error.component';
-
+import { OrderModule } from 'ngx-order-pipe';
 
 //path for all the component used in the project for routing
 const routes : Routes = [
@@ -88,9 +88,8 @@ const routes : Routes = [
     RouterModule.forRoot(routes), // it is used for the in-app navigation between diffrent component
     BrowserAnimationsModule,//introduces the animation capabilities into our Angular root application module
     Ng2SearchPipeModule,// it is used for using fiter pipe for filtering the list results
-    NgxPaginationModule //it is used for adding pagiation to the list
-
-    
+    NgxPaginationModule, //it is used for adding pagiation to the list
+    OrderModule
   ],
   providers: [
     {provide:ErrorHandler , useClass : GlobalErrorHandler}
