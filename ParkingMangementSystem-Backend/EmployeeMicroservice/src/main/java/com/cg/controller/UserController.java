@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,8 @@ public class UserController {
 			}
 		}
 
+		User user = service.addUser(e);
+		
 		try {
 			service.sendNotification(e);
 		} catch (MailException exp) {
@@ -41,7 +44,7 @@ public class UserController {
 			 System.err.println(exp.getMessage());
 		}
 
-		User user = service.addUser(e);
+		
 		return user;
 	}
 
@@ -50,5 +53,11 @@ public class UserController {
 	public List<User> getAllUser() {
 		return this.service.getallUser();
 	}
-
+	
+	// http://localhost:8034/User/getbyName
+	@GetMapping("/getbyName/{uname}")
+	public User getUserByName(@PathVariable("uname") String userName) {
+		return service.getBookingByUsername(userName);
+	
+	}
 }

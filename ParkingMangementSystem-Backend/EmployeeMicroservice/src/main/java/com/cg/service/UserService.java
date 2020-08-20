@@ -18,5 +18,6 @@ public interface UserService {
 	public void deleteUser(int userId);
 	public List<User> getAllCustomer();
 	public void sendNotification(User user);
+	public User getBookingByUsername(String userName);
 
 }

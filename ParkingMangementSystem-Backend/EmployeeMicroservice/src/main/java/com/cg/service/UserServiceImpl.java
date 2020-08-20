@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
 		// send email
 		SimpleMailMessage mail = new SimpleMailMessage();
 		mail.setTo(user.getEmail());
-		mail.setFrom("usbhagat1997@gmail.com");
-		mail.setSubject("You have been registered");
+		mail.setFrom("parkingexpress20@gmail.com");
+		mail.setSubject("You have been Registered");
 		mail.setText("Dear" + " " + user.getUserName() + ",\r\n" + "Your Phone no" + " " + user.getPhoneNo() + " "
 				+ "is added.Thank you for Getting Registered to PARKING EXPRESS PVT LTD ."
 				+ " Hope You Like our Service ." + "Do give your valid feedback. ");
@@ -56,6 +56,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getallUser() {
 		return this.eDao.findAll();
+	}
+
+	@Override
+	public User getBookingByUsername(String userName) {
+		return this.eDao.findByUserName(userName);
 	}
 
 }

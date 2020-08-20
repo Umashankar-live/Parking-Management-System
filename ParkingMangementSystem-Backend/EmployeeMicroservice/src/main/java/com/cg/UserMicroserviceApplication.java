@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @Configuration annotation is part of the spring core framework. Spring Configuration annotation indicates that the class has
  * @Bean definition methods ie. allows us to use annotations for dependency injection.
  *  
- * first step of defining Spring Beans is by adding the right annotation — @Component or @Service or @Repository.However, 
+ * first step of defining Spring Beans is by adding the right annotation — @Component or @Service or @Repository However, 
  * Spring does not know about the bean unless it knows where to search for it.This part of “telling Spring where to search” 
  * is called a @ComponentScan . we define the packages that have to be scanned.
  * 
