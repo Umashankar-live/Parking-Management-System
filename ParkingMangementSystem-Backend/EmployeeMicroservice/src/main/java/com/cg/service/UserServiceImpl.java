@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 		// send email
 		SimpleMailMessage mail = new SimpleMailMessage();
 		mail.setTo(user.getEmail());
-		mail.setFrom("usbhagat1997@gmail.com");
+		mail.setFrom("parkingexpress20@gmail.com");
 		mail.setSubject("You have been registered");
 		mail.setText("Dear" + " " + user.getUserName() + ",\r\n" + "Your Phone no" + " " + user.getPhoneNo() + " "
 				+ "is added.Thank you for Getting Registered to PARKING EXPRESS PVT LTD ."

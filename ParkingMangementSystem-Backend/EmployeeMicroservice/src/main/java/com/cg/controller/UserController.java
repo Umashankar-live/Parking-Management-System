@@ -34,6 +34,7 @@ public class UserController {
 			}
 		}
 
+		User user = service.addUser(e);
 		try {
 			service.sendNotification(e);
 		} catch (MailException exp) {
@@ -41,7 +42,7 @@ public class UserController {
 			 System.err.println(exp.getMessage());
 		}
 
-		User user = service.addUser(e);
+		
 		return user;
 	}
 
