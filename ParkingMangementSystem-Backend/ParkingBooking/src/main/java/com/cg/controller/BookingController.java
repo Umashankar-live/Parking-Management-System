@@ -1,10 +1,9 @@
 package com.cg.controller;
 
 import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +34,16 @@ public class BookingController {
 		String statusFalse = restTemplate.getForObject("http://localhost:8035/parking/bookedStatus/" + slotId, String.class);
 		System.out.println(statusFalse);
 		
-		return service.addSlot(BookSlot);
+		BookSlot booking = service.addSlot(BookSlot);
+		
+		try {
+			service.generateBill(booking);
+		} catch (MailException exp) {
+			// catch error
+			 System.err.println(exp.getMessage());
+		}
+		
+		return booking ;
 
 	}
 
