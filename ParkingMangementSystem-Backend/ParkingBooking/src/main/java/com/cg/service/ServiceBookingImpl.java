@@ -19,12 +19,12 @@ public class ServiceBookingImpl implements ServiceBooking {
 
 	@Autowired
 	private BookingDao bookingDao;
-	
+
 	@Autowired
 	private JavaMailSender javaMailSender;
-	
+
 	@Autowired
-	RestTemplate restTemplate ;
+	RestTemplate restTemplate;
 
 	@Override
 	public BookSlot addSlot(BookSlot booking) {
@@ -62,25 +62,26 @@ public class ServiceBookingImpl implements ServiceBooking {
 
 	@Override
 	public void generateBill(BookSlot booking) throws MailException {
-		
-		// getting the user email using restTemplate
-		User user = restTemplate.getForObject("http://localhost:8034/User/getbyName/" + booking.getUserName(), User.class);
-		
-		// send email
-				SimpleMailMessage mail = new SimpleMailMessage();
-				mail.setTo(user.getEmail());
-				mail.setFrom("parkingexpress20@gmail.com");
-				mail.setSubject("Your Slot is Booked");
-				mail.setText("Dear" + " " + booking.getUserName() + ",\r\n" + "Your Slot Booking of" + " " + booking.getLocation() + " "
-						+"location for vehicle no :"+" "+booking.getVehicleNo()+" "+"which is a"+" " + booking.getType()+"wheeler is added." + 
-						"\r\n" + "Date Of Booking :" +" "+booking.getDate()+
-						"\r\n" + "Time Of Booking :" +" "+booking.getTime()+
-						"\r\n" + "Total Duration :" + " " + booking.getHour()+" "+"hrs"+
-						"\r\n" + "Total Bill :"+" "+booking.getTotalPrice()+" "+"rs"+"\r\n"
-						+"Thank you for Getting Registered to Parking Express Pvt. Ltd. and hope you Liked our service.Do give your valid feedback. ");
 
-				javaMailSender.send(mail);
-		
+		// getting the user email using restTemplate
+		User user = restTemplate.getForObject("http://localhost:8034/User/getbyName/" + booking.getUserName(),
+				User.class);
+
+		// send email
+		SimpleMailMessage mail = new SimpleMailMessage();
+		mail.setTo(user.getEmail());
+		mail.setFrom("parkingexpress20@gmail.com");
+		mail.setSubject("Your Slot is Booked");
+		mail.setText("Dear" + " " + booking.getUserName() + ",\r\n" + "Your Slot Booking of" + " "
+				+ booking.getLocation() + " " + "location for vehicle no :" + " " + booking.getVehicleNo() + " "
+				+ "which is a" + " " + booking.getType() + "wheeler is added." + "\r\n" + "Date Of Booking :" + " "
+				+ booking.getDate() + "\r\n" + "Time Of Booking :" + " " + booking.getTime() + "\r\n"
+				+ "Total Duration :" + " " + booking.getHour() + " " + "hrs" + "\r\n" + "Total Bill :" + " "
+				+ booking.getTotalPrice() + " " + "rs" + "\r\n"
+				+ "Thank you for Getting Registered to Parking Express Pvt. Ltd. and hope you Liked our service.Do give your valid feedback. ");
+
+		javaMailSender.send(mail);
+
 	}
 
 }

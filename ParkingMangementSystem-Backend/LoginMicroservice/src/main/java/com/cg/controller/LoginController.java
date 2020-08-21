@@ -12,20 +12,29 @@ import com.cg.beans.Login;
 import com.cg.beans.User;
 import com.cg.service.LoginService;
 
+/*
+ * @Autowired - The process of injection spring bean dependencies while initializing it
+ * @RequestMapping - for configuring URI mapping in controller handler methods 
+ * @PathVariable -  for mapping dynamic values from the URI to handler method arguments.
+ * @CrossOrigin - enables cross-origin resource sharing only for this specific method. By default, its allows all origins, 
+ *                all headers, and the HTTP methods specified in the @RequestMapping annotation
+ * @ResponseBody - annotation maps the HttpRequest body to a transfer or domain object
+ */
+
 @RestController
 @CrossOrigin("http://localhost:4200")
 @RequestMapping("/login")
 public class LoginController {
+
 	
 	@Autowired
 	private LoginService service;
-	
-	//http://localhost:8037/login/validate
+
+	// http://localhost:8037/login/validate
 	@RequestMapping(value = "/validate", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public User validate(@RequestBody Login login) {
 		User user = service.validate(login);
 		return user;
 	}
 
-	
 }

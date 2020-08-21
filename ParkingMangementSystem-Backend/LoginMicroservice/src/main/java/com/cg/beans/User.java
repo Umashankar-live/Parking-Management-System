@@ -6,34 +6,33 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name ="User_MASTER")
+@Table(name = "User_MASTER")
 public class User {
 	@Id
-	@Column(name="User_Id")
+	@Column(name = "User_Id")
 	private Integer userId;
-	
-	@Column(name="User_Name")
+
+	@Column(name = "User_Name")
 	private String userName;
-	
-	@Column(name="Password")
+
+	@Column(name = "Password")
 	private String password;
-	
-	@Column(name="Role")
+
+	@Column(name = "Role")
 	private String role;
-	
-	@Column(name="Email_Id")
+
+	@Column(name = "Email_Id")
 	private String email;
-	
-	@Column(name="Phone_No")
+
+	@Column(name = "Phone_No")
 	private String phoneNo;
-	
-	@Column(name="Gender")
+
+	@Column(name = "Gender")
 	private String gender;
-	
+
 	public User() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public User(Integer userId, String userName, String password, String role, String email, String phoneNo,
@@ -104,6 +103,4 @@ public class User {
 		this.gender = gender;
 	}
 
-	
-	
 }

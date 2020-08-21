@@ -1,8 +1,8 @@
 package com.cg.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,39 +17,50 @@ import org.springframework.web.client.RestTemplate;
 import com.cg.beans.BookSlot;
 import com.cg.service.ServiceBooking;
 
+/*
+ * @Autowired - The process of injection spring bean dependencies while initializing it
+ * @RequestMapping - for configuring URI mapping in controller handler methods 
+ * @PathVariable -  for mapping dynamic values from the URI to handler method arguments.
+ * @CrossOrigin - enables cross-origin resource sharing only for this specific method. By default, its allows all origins, 
+ *                all headers, and the HTTP methods specified in the @RequestMapping annotation
+ * @ResponseBody - annotation maps the HttpRequest body to a transfer or domain object
+ */
 @RestController
 @CrossOrigin("http://localhost:4200")
 @RequestMapping("/booking")
 public class BookingController {
 
+	
 	@Autowired
 	ServiceBooking service;
 
 	@Autowired
 	private RestTemplate restTemplate;
 
+	
 	@PostMapping("/add/{slotId}")
 	public BookSlot addBookSlot(@RequestBody BookSlot BookSlot, @PathVariable("slotId") int slotId) {
 
-		String statusFalse = restTemplate.getForObject("http://localhost:8035/parking/bookedStatus/" + slotId, String.class);
+		String statusFalse = restTemplate.getForObject("http://localhost:8035/parking/bookedStatus/" + slotId,
+				String.class);
 		System.out.println(statusFalse);
-		
+
 		BookSlot booking = service.addSlot(BookSlot);
-		
+
 		try {
 			service.generateBill(booking);
 		} catch (MailException exp) {
 			// catch error
-			 System.err.println(exp.getMessage());
+			System.err.println(exp.getMessage());
 		}
-		
-		return booking ;
+
+		return booking;
 
 	}
 
 	@GetMapping("/get")
 	public List<BookSlot> fetchAll() {
-			return service.fetchAll();
+		return service.fetchAll();
 	}
 
 	@GetMapping("/getbyName/{uname}")
@@ -59,11 +70,12 @@ public class BookingController {
 
 	@DeleteMapping("/delete/{id}")
 	public void deleteBookSlot(@PathVariable("id") Integer bookingId) {
-	BookSlot book=service.getBookingById(bookingId);
-	String statusTrue = restTemplate.getForObject("http://localhost:8035/parking/cancelStatus/" + book.getSlotNo(), String.class);
-	System.out.println(statusTrue);
-		
-		 service.delete(bookingId);
+		BookSlot book = service.getBookingById(bookingId);
+		String statusTrue = restTemplate.getForObject("http://localhost:8035/parking/cancelStatus/" + book.getSlotNo(),
+				String.class);
+		System.out.println(statusTrue);
+
+		service.delete(bookingId);
 	}
 
 	@GetMapping("/location/{location}")

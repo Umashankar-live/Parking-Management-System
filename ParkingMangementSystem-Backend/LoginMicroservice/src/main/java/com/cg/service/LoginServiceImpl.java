@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.beans.User;
 import com.cg.beans.Login;
+import com.cg.beans.User;
 import com.cg.dao.UserDao;
+
 @Service
 public class LoginServiceImpl implements LoginService {
-	
+
+	// The process of injection spring bean dependencies while initializing it
 	@Autowired
 	private UserDao userDao;
 
@@ -18,14 +20,12 @@ public class LoginServiceImpl implements LoginService {
 	public User validate(Login login) {
 		List<User> allUsers = userDao.findAll();
 		for (int i = 0; i < allUsers.size(); i++) {
-			if(allUsers.get(i).getUserName().equalsIgnoreCase(login.getName()) && 
-					allUsers.get(i).getPassword().equalsIgnoreCase(login.getPassword())) {
+			if (allUsers.get(i).getUserName().equalsIgnoreCase(login.getName())
+					&& allUsers.get(i).getPassword().equalsIgnoreCase(login.getPassword())) {
 				return allUsers.get(i);
 			}
 		}
 		return null;
 	}
-
-
 
 }

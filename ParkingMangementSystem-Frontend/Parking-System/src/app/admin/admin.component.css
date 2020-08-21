@@ -62,7 +62,7 @@ body {
 	height:100% ;
 	background-size:cover;
 	width:auto;
-	background-image:url('https://wallup.net/wp-content/uploads/2017/11/17/298504-parking_lot-monochrome-748x498.jpg');
+	background-image:url('src/assets/298504-parking_lot-monochrome-748x498.jpg');
 	background-position:center;
 	background-blend-mode:multiply ;
   }

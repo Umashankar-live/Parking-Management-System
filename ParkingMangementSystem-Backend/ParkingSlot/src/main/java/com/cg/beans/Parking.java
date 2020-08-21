@@ -11,22 +11,22 @@ public class Parking {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name="SR.No")
+	@Column(name = "SR.No")
 	private int srno;
-	
-	@Column(name="Location")
+
+	@Column(name = "Location")
 	private String location;
-	
-	@Column(name="Two_Wheeler_Slots")
+
+	@Column(name = "Two_Wheeler_Slots")
 	private int twoWheelerTotal;
-	
-	@Column(name="Two_Wheeler_Available_Slots")
+
+	@Column(name = "Two_Wheeler_Available_Slots")
 	private int twoWheelerAvailable;
-	
-	@Column(name="Four_Wheeler_Slots")
+
+	@Column(name = "Four_Wheeler_Slots")
 	private int fourWheelerTotal;
-	
-	@Column(name="Four_Wheeler_Available_Slots")
+
+	@Column(name = "Four_Wheeler_Available_Slots")
 	private int fourWheelerAvailable;
 
 	public Parking(int srno, String location, int twoWheelerTotal, int twoWheelerAvailable, int fourWheelerTotal,
@@ -39,8 +39,9 @@ public class Parking {
 		this.fourWheelerTotal = fourWheelerTotal;
 		this.fourWheelerAvailable = fourWheelerAvailable;
 	}
-	
-	public Parking() {}
+
+	public Parking() {
+	}
 
 	public int getSrno() {
 		return srno;
@@ -90,19 +91,11 @@ public class Parking {
 		this.fourWheelerAvailable = fourWheelerAvailable;
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return "Parking [srno=" + srno + ", location=" + location + ", twoWheelerTotal=" + twoWheelerTotal
 				+ ", twoWheelerAvailable=" + twoWheelerAvailable + ", fourWheelerTotal=" + fourWheelerTotal
 				+ ", fourWheelerAvailable=" + fourWheelerAvailable + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
+
 }

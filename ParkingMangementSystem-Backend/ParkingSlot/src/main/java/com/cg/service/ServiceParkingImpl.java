@@ -20,9 +20,6 @@ public class ServiceParkingImpl implements ServiceParking {
 	@Autowired
 	private SlotDao sdao;
 
-	
-	
-	
 
 	@Override
 	public Parking addSlot(Parking parking) {

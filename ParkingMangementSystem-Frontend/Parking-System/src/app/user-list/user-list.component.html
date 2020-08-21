@@ -33,7 +33,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let park of parking  | filter : term | paginate : { itemsPerPage:4, currentPage:page }">
+              <tr *ngFor="let park of parking | orderBy: srno : false | filter : term | paginate : { itemsPerPage:4, currentPage:page }">
                 <td> {{park.location}} </td>
                 <td> {{park.twoWheelerAvailable}} </td>
                 <td> {{park.fourWheelerAvailable}} </td>

@@ -43,15 +43,7 @@ public class UserMicroserviceApplicationTests {
 		assertEquals(2, service.getallUser().size());
 	}
 
-//	@Test
-//	public void getUserbyAddressTest() {
-//		String address = "Bangalore";
-//		when(repository.findByAddress(address))
-//				.thenReturn(Stream.of(new User(376, "Danile", 31, "USA")).collect(Collectors.toList()));
-//		assertEquals(1, service.getUserbyAddress(address).size());
-//	}
-//
-	
+
 	@Test
 	public void saveUserTest() {
 		User User = new User(1, "Shekhar", "12345", "admin","Shekar2@gmail.com","9878987654","Male");

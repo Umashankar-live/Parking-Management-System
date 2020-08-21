@@ -36,7 +36,7 @@
            
           </tr>
 
-          <tr *ngFor="let b of bookingList | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
+          <tr *ngFor="let b of bookingList | orderBy: bookingId : false | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
             <td>{{b.userName}}</td>
             <td>{{b.vehicleNo}}</td>
             <td>{{b.date | date | uppercase}}</td>
@@ -48,7 +48,7 @@
             <td><button class="btn btn-danger" (click)="remove(b.bookingId)"><i class="fa fa-trash"></i></button></td>
           </tr>
         </table>
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        <pagination-controls  (pageChange)="page = $event"></pagination-controls>
 
       </div>
 

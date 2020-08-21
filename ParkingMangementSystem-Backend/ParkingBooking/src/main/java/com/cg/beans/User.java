@@ -1,40 +1,24 @@
 
- 
 package com.cg.beans;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
-
 public class User {
-	
+
 	private Integer userId;
-	
-	
+
 	private String userName;
-	
-	
+
 	private String password;
-	
-	
+
 	private String role;
-	
-	
+
 	private String email;
-	
-	
+
 	private String phoneNo;
-	
-	
+
 	private String gender;
-	
+
 	public User() {
-		
+
 	}
 
 	public User(Integer userId, String userName, String password, String role, String email, String phoneNo,
@@ -105,6 +89,4 @@ public class User {
 		this.gender = gender;
 	}
 
-	
-	
 }

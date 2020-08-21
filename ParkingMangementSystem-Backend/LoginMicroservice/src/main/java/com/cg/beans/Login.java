@@ -3,9 +3,9 @@ package com.cg.beans;
 public class Login {
 	private String name;
 	private String password;
-	
+
 	public Login() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Login(String name, String password) {
@@ -29,7 +29,5 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
 }

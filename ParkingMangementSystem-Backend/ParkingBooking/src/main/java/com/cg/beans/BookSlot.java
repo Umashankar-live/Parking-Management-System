@@ -7,13 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//GenerationType indicates that the persistence provider should automatically pick an appropriate strategy for the particular database.
-//This is the default GenerationType
+
+
 @Entity
 public class BookSlot {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO) //GenerationType indicates that the persistence provider should automatically pick an appropriate strategy for the particular database.
 	private Integer bookingId;
 
 	private LocalDate date;
