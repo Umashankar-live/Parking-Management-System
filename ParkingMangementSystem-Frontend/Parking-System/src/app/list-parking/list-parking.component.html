@@ -34,7 +34,7 @@
 
 
                     <tr
-                        *ngFor="let p of parkingList | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
+                        *ngFor="let p of parkingList |orderBy: srno : false  | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
                         <td>{{p.location}}</td>
                         <td>{{p.fourWheelerAvailable}}</td>
                         <td>{{p.twoWheelerAvailable}}</td>
@@ -42,7 +42,7 @@
                         </td>
                     </tr>
                 </table>
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                <pagination-controls style="color: white;" (pageChange)="page = $event"></pagination-controls>
 
             </div>
         </div>
