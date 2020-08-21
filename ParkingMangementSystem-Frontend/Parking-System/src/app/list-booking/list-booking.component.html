@@ -36,7 +36,11 @@
            
           </tr>
 
+<<<<<<< HEAD
           <tr *ngFor="let b of bookingList | orderBy: bookingId : false | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
+=======
+          <tr *ngFor="let b of bookingList |orderBy: bookingId : false | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
+>>>>>>> 41da7ff86dcb01cefd5abaf0f677808767ee08a7
             <td>{{b.userName}}</td>
             <td>{{b.vehicleNo}}</td>
             <td>{{b.date | date | uppercase}}</td>
@@ -48,7 +52,11 @@
             <td><button class="btn btn-danger" (click)="remove(b.bookingId)"><i class="fa fa-trash"></i></button></td>
           </tr>
         </table>
+<<<<<<< HEAD
         <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+=======
+        <pagination-controls style="color: white;" (pageChange)="page = $event"></pagination-controls>
+>>>>>>> 41da7ff86dcb01cefd5abaf0f677808767ee08a7
 
       </div>
 
