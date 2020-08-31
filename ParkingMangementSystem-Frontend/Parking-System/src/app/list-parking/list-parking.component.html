@@ -34,11 +34,7 @@
 
 
                     <tr
-<<<<<<< HEAD
                         *ngFor="let p of parkingList | orderBy: srno : false | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
-=======
-                        *ngFor="let p of parkingList |orderBy: srno : false  | filter : term | paginate : { itemsPerPage:4, currentPage:page } ">
->>>>>>> 41da7ff86dcb01cefd5abaf0f677808767ee08a7
                         <td>{{p.location}}</td>
                         <td>{{p.fourWheelerAvailable}}</td>
                         <td>{{p.twoWheelerAvailable}}</td>
